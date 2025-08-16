@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="RangedTowerUpgradeData" load_steps=18 format=3 uid="uid://cdmwxwyyxoy20"]
+
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="1_8lxs0"]
+[ext_resource type="Resource" uid="uid://c5xt1yedui7pe" path="res://Resources/Settings/Towers Upgrades/Archer/upgrade_3_0.tres" id="2_0y8er"]
+[ext_resource type="Script" uid="uid://dt3t8wrjykoc7" path="res://Scripts/Resources/Turret Upgrade Strategy/ranged_tower_upgrade_data.gd" id="3_0xnkp"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="4_i0vsc"]
+[ext_resource type="Texture2D" uid="uid://bafwgtso01rq6" path="res://Assets/Sprites/UI/damage_icon.png" id="5_0y8er"]
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="6_n5gsy"]
+[ext_resource type="Texture2D" uid="uid://cxlsyuba4aror" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_0.png" id="7_ygq07"]
+[ext_resource type="Texture2D" uid="uid://dsyq0v5ygwqhe" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_1.png" id="8_ndlgu"]
+[ext_resource type="Texture2D" uid="uid://bleadejc06ki3" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_2.png" id="9_m0crr"]
+[ext_resource type="Texture2D" uid="uid://behn2lx5kyrfe" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_3.png" id="10_0at6k"]
+[ext_resource type="Texture2D" uid="uid://bhgrv8cp5he8u" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_4.png" id="11_5aihm"]
+[ext_resource type="Texture2D" uid="uid://bjdjqoewk301b" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_5.png" id="12_8r0xo"]
+[ext_resource type="Script" uid="uid://cwmyq8u3ql6km" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/tower_upgrade_strategy_base.gd" id="13_whwg5"]
+[ext_resource type="Script" uid="uid://cg0glto8l22uc" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/damage_upgrade_strategy.gd" id="14_gdxij"]
+
+[sub_resource type="Resource" id="Resource_42poc"]
+script = ExtResource("4_i0vsc")
+count = 4.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_mx8ix"]
+script = ExtResource("6_n5gsy")
+textures = Array[Texture2D]([ExtResource("12_8r0xo"), ExtResource("7_ygq07"), ExtResource("8_ndlgu"), ExtResource("9_m0crr"), ExtResource("10_0at6k"), ExtResource("11_5aihm")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_rusm3"]
+script = ExtResource("14_gdxij")
+add_v = 0.0
+mult_v = 3.0
+metadata/_custom_type_script = "uid://cg0glto8l22uc"
+
+[resource]
+script = ExtResource("3_0xnkp")
+upgraded_tower_attack = SubResource("Resource_mx8ix")
+upgrade_name = "Big shot"
+upgrade_description = ""
+upgrade_image = ExtResource("5_0y8er")
+upgrade_cost = SubResource("Resource_42poc")
+upgrades = Array[ExtResource("13_whwg5")]([SubResource("Resource_rusm3")])
+next_upgrades = Array[ExtResource("1_8lxs0")]([ExtResource("2_0y8er")])
+metadata/_custom_type_script = "uid://dt3t8wrjykoc7"

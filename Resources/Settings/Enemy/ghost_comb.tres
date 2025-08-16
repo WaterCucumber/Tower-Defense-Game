@@ -1,0 +1,180 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=61 format=3 uid="uid://cqaj5y77g3eu1"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_tyl5h"]
+[ext_resource type="Texture2D" uid="uid://ckuq1i3cfnf16" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_4.png" id="2_8fi6l"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="2_imt11"]
+[ext_resource type="Texture2D" uid="uid://bpkl4nahnetxc" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_4.png" id="3_bovec"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="3_gihi8"]
+[ext_resource type="Texture2D" uid="uid://dgt4b36hj6mx1" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_5.png" id="4_o6iks"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="4_qh4nc"]
+[ext_resource type="Texture2D" uid="uid://cfqgj235tw8f1" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_5.png" id="5_maxb6"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="6_hc5pq"]
+[ext_resource type="Texture2D" uid="uid://by01iaihsnsoe" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_5.png" id="6_k0cx4"]
+[ext_resource type="Texture2D" uid="uid://cpyb6avlhvhcj" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_6.png" id="7_eg8w8"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="7_flv3i"]
+[ext_resource type="Texture2D" uid="uid://b1lfh1lrspk2i" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_6.png" id="8_387hb"]
+[ext_resource type="Texture2D" uid="uid://dvsfmmngsop4f" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_7.png" id="9_jg3pc"]
+[ext_resource type="Texture2D" uid="uid://ifau04jguxrs" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_6.png" id="10_524su"]
+[ext_resource type="Texture2D" uid="uid://dajt0tex47bmh" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_8.png" id="11_qj5hn"]
+[ext_resource type="Texture2D" uid="uid://m4aofmwphxbq" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_7.png" id="12_j6p42"]
+[ext_resource type="Script" uid="uid://kigup5634uin" path="res://Scripts/Resources/Health/armor_health_effect.gd" id="14_g1cvc"]
+[ext_resource type="Resource" uid="uid://cysimr0b2gmdo" path="res://Resources/Settings/Effects/armor.tres" id="15_n7pvb"]
+[ext_resource type="Script" uid="uid://bwij1k6ppyjap" path="res://Scripts/Resources/Health/resistance_health_effect.gd" id="16_wv6sd"]
+[ext_resource type="Resource" uid="uid://bn007qtp7d2vv" path="res://Resources/Settings/Effects/resistance.tres" id="17_vwlml"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="20_pfflx"]
+[ext_resource type="Texture2D" uid="uid://bmhxt08heaihh" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Move_0.png" id="21_fh35q"]
+[ext_resource type="Texture2D" uid="uid://hfnl15gl4md4" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Move_0.png" id="22_162ud"]
+[ext_resource type="Texture2D" uid="uid://c1dmdf2acu6to" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_0.png" id="23_d4f5s"]
+[ext_resource type="Texture2D" uid="uid://byc87k8vmkk8t" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Move_1.png" id="24_0g3u8"]
+[ext_resource type="Texture2D" uid="uid://c6lfmba2js3ly" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Move_1.png" id="25_r08hl"]
+[ext_resource type="Texture2D" uid="uid://rspjebagu1qm" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_1.png" id="26_x2duu"]
+[ext_resource type="Texture2D" uid="uid://pltfs88scikp" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Move_2.png" id="27_yw3vt"]
+[ext_resource type="Texture2D" uid="uid://bxl72iuckckpa" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Move_2.png" id="28_8tims"]
+[ext_resource type="Texture2D" uid="uid://vxu3v5rw3qjo" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Move_3.png" id="29_i6dpr"]
+[ext_resource type="Texture2D" uid="uid://2esl5hsoxipi" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_2.png" id="30_t0rmb"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="33_ly75x"]
+[ext_resource type="Script" uid="uid://chmuhbcl5s8i" path="res://Scripts/Resources/Effect Ignores/armor_effect_ignore.gd" id="34_3scet"]
+[ext_resource type="Script" uid="uid://mwp4yq1wdf4f" path="res://Scripts/Resources/Effect Ignores/resistance_effect_ignore.gd" id="35_va22q"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="36_qsefd"]
+[ext_resource type="Script" uid="uid://b3ts7sbiv4qnx" path="res://Scripts/Resources/Effects/damage_over_time_effect.gd" id="37_pkei7"]
+[ext_resource type="Resource" uid="uid://c5ii0shhcni8t" path="res://Resources/Settings/Effects/regeneration.tres" id="38_l2ra7"]
+[ext_resource type="Script" uid="uid://r4wejoe2bmt5" path="res://Scripts/Resources/Effects/delayed_effect.gd" id="39_bovec"]
+[ext_resource type="Resource" uid="uid://kl5odghf50qc" path="res://Resources/Settings/Effects/delayed.tres" id="40_o6iks"]
+
+[sub_resource type="Resource" id="Resource_1ilyh"]
+script = ExtResource("1_tyl5h")
+textures = Array[Texture2D]([ExtResource("2_8fi6l"), ExtResource("3_bovec"), ExtResource("4_o6iks"), ExtResource("5_maxb6"), ExtResource("6_k0cx4"), ExtResource("7_eg8w8"), ExtResource("8_387hb"), ExtResource("9_jg3pc"), ExtResource("10_524su"), ExtResource("11_qj5hn"), ExtResource("12_j6p42")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_u85as"]
+script = ExtResource("14_g1cvc")
+armor = 1.0
+can_be_less_than_zero = false
+visual = ExtResource("15_n7pvb")
+metadata/_custom_type_script = "uid://kigup5634uin"
+
+[sub_resource type="Resource" id="Resource_5pks3"]
+script = ExtResource("16_wv6sd")
+resistance_pct = 0.5
+can_be_less_than_zero = false
+visual = ExtResource("17_vwlml")
+metadata/_custom_type_script = "uid://bwij1k6ppyjap"
+
+[sub_resource type="Resource" id="Resource_xs4lf"]
+script = ExtResource("4_qh4nc")
+count = 100.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_78omo"]
+script = ExtResource("4_qh4nc")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_atefd"]
+script = ExtResource("20_pfflx")
+min_count_koef = 1.0
+min_count = SubResource("Resource_78omo")
+max_count_koef = 1.0
+max_count = SubResource("Resource_xs4lf")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_j0gio"]
+script = ExtResource("3_gihi8")
+start_health = SubResource("Resource_atefd")
+health_effects = Array[ExtResource("2_imt11")]([SubResource("Resource_u85as"), SubResource("Resource_5pks3")])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_i5d30"]
+script = ExtResource("1_tyl5h")
+textures = Array[Texture2D]([ExtResource("21_fh35q"), ExtResource("22_162ud"), ExtResource("23_d4f5s"), ExtResource("24_0g3u8"), ExtResource("25_r08hl"), ExtResource("26_x2duu"), ExtResource("27_yw3vt"), ExtResource("28_8tims"), ExtResource("29_i6dpr"), ExtResource("30_t0rmb")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_1nrf0"]
+script = ExtResource("4_qh4nc")
+count = 5.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_cm4nu"]
+script = ExtResource("4_qh4nc")
+count = 0.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_64uv4"]
+script = ExtResource("20_pfflx")
+min_count_koef = 1.0
+min_count = SubResource("Resource_cm4nu")
+max_count_koef = 1.0
+max_count = SubResource("Resource_1nrf0")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_0k7ah"]
+script = ExtResource("4_qh4nc")
+count = 150.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_0bsb6"]
+script = ExtResource("4_qh4nc")
+count = 20.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_h3sey"]
+script = ExtResource("20_pfflx")
+min_count_koef = 1.0
+min_count = SubResource("Resource_0bsb6")
+max_count_koef = 1.0
+max_count = SubResource("Resource_0k7ah")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_tyl5h"]
+script = ExtResource("4_qh4nc")
+count = -10.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_7chjt"]
+script = ExtResource("34_3scet")
+ignore_value = 999.0
+can_be_less_than_zero = false
+metadata/_custom_type_script = "uid://chmuhbcl5s8i"
+
+[sub_resource type="Resource" id="Resource_2cq6e"]
+script = ExtResource("35_va22q")
+ignore_part = 1.0
+can_be_less_than_zero = false
+metadata/_custom_type_script = "uid://mwp4yq1wdf4f"
+
+[sub_resource type="Resource" id="Resource_k5sj8"]
+script = ExtResource("36_qsefd")
+count = SubResource("Resource_tyl5h")
+ignores = Array[ExtResource("33_ly75x")]([SubResource("Resource_7chjt"), SubResource("Resource_2cq6e")])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[sub_resource type="Resource" id="Resource_maxb6"]
+script = ExtResource("37_pkei7")
+damage = SubResource("Resource_k5sj8")
+max_stack_count = 1
+infinite_stack_count = true
+duration = 5.0
+is_infinite = true
+visual = ExtResource("38_l2ra7")
+metadata/_custom_type_script = "uid://b3ts7sbiv4qnx"
+
+[sub_resource type="Resource" id="Resource_k0cx4"]
+script = ExtResource("39_bovec")
+main_effect = SubResource("Resource_maxb6")
+delay = 10.0
+loop = false
+apply_on_start = true
+visual = ExtResource("40_o6iks")
+metadata/_custom_type_script = "uid://r4wejoe2bmt5"
+
+[resource]
+script = ExtResource("6_hc5pq")
+health = SubResource("Resource_j0gio")
+start_effects = Array[ExtResource("7_flv3i")]([SubResource("Resource_k0cx4")])
+speed = SubResource("Resource_h3sey")
+reward = SubResource("Resource_64uv4")
+modification = 0
+name = "Ghost Comb"
+movement_anim = SubResource("Resource_i5d30")
+death_anim = SubResource("Resource_1ilyh")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

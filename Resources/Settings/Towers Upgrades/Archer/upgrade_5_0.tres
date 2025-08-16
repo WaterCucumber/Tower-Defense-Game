@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="RangedTowerUpgradeData" load_steps=18 format=3 uid="uid://caj2b3os8b604"]
+
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="1_gt1es"]
+[ext_resource type="Script" uid="uid://dt3t8wrjykoc7" path="res://Scripts/Resources/Turret Upgrade Strategy/ranged_tower_upgrade_data.gd" id="2_cc34c"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="3_t0tpj"]
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="5_iefoy"]
+[ext_resource type="Texture2D" uid="uid://b5fiyrp7eac85" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_0.png" id="6_bhodf"]
+[ext_resource type="Texture2D" uid="uid://c2te6s3ydebj5" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_1.png" id="7_y7s1e"]
+[ext_resource type="Texture2D" uid="uid://b0sbcqob7psr" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_2.png" id="8_vn1mm"]
+[ext_resource type="Texture2D" uid="uid://jntdmaa338wk" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_3.png" id="9_a48ry"]
+[ext_resource type="Texture2D" uid="uid://cl3flbvsdaeq5" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_4.png" id="10_h7fdl"]
+[ext_resource type="Texture2D" uid="uid://b3wq4pjdoyoh" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level5/Archer_l5_5.png" id="11_sx8mm"]
+[ext_resource type="Script" uid="uid://cwmyq8u3ql6km" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/tower_upgrade_strategy_base.gd" id="12_24kjv"]
+[ext_resource type="Script" uid="uid://dkrofpfeloef4" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/cooldown_upgrade_strategy.gd" id="13_vumo6"]
+[ext_resource type="Script" uid="uid://cg0glto8l22uc" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/damage_upgrade_strategy.gd" id="14_w57n7"]
+
+[sub_resource type="Resource" id="Resource_bqnaf"]
+script = ExtResource("3_t0tpj")
+count = 10.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_dv5cj"]
+script = ExtResource("5_iefoy")
+textures = Array[Texture2D]([ExtResource("11_sx8mm"), ExtResource("6_bhodf"), ExtResource("7_y7s1e"), ExtResource("8_vn1mm"), ExtResource("9_a48ry"), ExtResource("10_h7fdl")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_28cba"]
+script = ExtResource("14_w57n7")
+add_v = 0.0
+mult_v = 4.0
+metadata/_custom_type_script = "uid://cg0glto8l22uc"
+
+[sub_resource type="Resource" id="Resource_v0je4"]
+script = ExtResource("13_vumo6")
+add_v = 0.2
+mult_v = 1.0
+metadata/_custom_type_script = "uid://dkrofpfeloef4"
+
+[resource]
+script = ExtResource("2_cc34c")
+upgraded_tower_attack = SubResource("Resource_dv5cj")
+upgrade_name = "True sniper"
+upgrade_description = ""
+upgrade_image = ExtResource("11_sx8mm")
+upgrade_cost = SubResource("Resource_bqnaf")
+upgrades = Array[ExtResource("12_24kjv")]([SubResource("Resource_28cba"), SubResource("Resource_v0je4")])
+next_upgrades = Array[ExtResource("1_gt1es")]([])
+metadata/_custom_type_script = "uid://dt3t8wrjykoc7"

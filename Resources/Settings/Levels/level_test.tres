@@ -1,0 +1,270 @@
+[gd_resource type="Resource" script_class="GameWaves" load_steps=38 format=3 uid="uid://cwrua6v26t2xl"]
+
+[ext_resource type="Script" uid="uid://dt3fu3j4boo72" path="res://Scripts/Resources/Wave/game_waves.gd" id="1_a48et"]
+[ext_resource type="Script" uid="uid://bmuoxxeydeye0" path="res://Scripts/Resources/Wave/wave.gd" id="2_b4lxq"]
+[ext_resource type="Script" uid="uid://c1j8ebq2e2h84" path="res://Scripts/Resources/Wave/wave_component.gd" id="3_qbapj"]
+[ext_resource type="Resource" uid="uid://djeuulk1sejl7" path="res://Resources/Settings/Enemy/ghost.tres" id="4_rdtph"]
+[ext_resource type="Resource" uid="uid://b7lluajc1fpw3" path="res://Resources/Settings/Enemy/ghostentacle.tres" id="5_fdtqb"]
+[ext_resource type="Resource" uid="uid://chhx8ivdp8age" path="res://Resources/Settings/Enemy/ghost_crab.tres" id="6_5uma6"]
+[ext_resource type="Resource" uid="uid://b77007db14guw" path="res://Resources/Settings/Enemy/glitched_ghost.tres" id="7_de1o6"]
+[ext_resource type="Resource" uid="uid://04a8gwdpqg23" path="res://Resources/Settings/Enemy/glitched_ghostentacle.tres" id="8_jyon6"]
+[ext_resource type="Resource" uid="uid://io30ir41s702" path="res://Resources/Settings/Enemy/glitched_ghost_crab.tres" id="9_blcsv"]
+[ext_resource type="Resource" uid="uid://cqaj5y77g3eu1" path="res://Resources/Settings/Enemy/ghost_comb.tres" id="10_6j27r"]
+
+[sub_resource type="Resource" id="Resource_ec8xl"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("4_rdtph")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 1.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_nnrov"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("4_rdtph")
+count = 5
+spawn_cooldown = 0.5
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_8f187"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_ec8xl"), SubResource("Resource_nnrov")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_7em3w"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("4_rdtph")
+count = 5
+spawn_cooldown = 0.75
+await_time_after = 1.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_xhbpa"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("5_fdtqb")
+count = 5
+spawn_cooldown = 0.75
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_ltoxb"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_7em3w"), SubResource("Resource_xhbpa")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_f52nk"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("6_5uma6")
+count = 5
+spawn_cooldown = 0.25
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_e7j3k"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("4_rdtph")
+count = 5
+spawn_cooldown = 0.5
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_u6ojs"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("5_fdtqb")
+count = 5
+spawn_cooldown = 0.75
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_r0o3c"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_f52nk"), SubResource("Resource_e7j3k"), SubResource("Resource_u6ojs")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_4tc0f"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("7_de1o6")
+count = 1
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_yrbto"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("4_rdtph")
+count = 10
+spawn_cooldown = 0.25
+await_time_after = 1.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_cl3jp"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("7_de1o6")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_i54g1"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_4tc0f"), SubResource("Resource_yrbto"), SubResource("Resource_cl3jp")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_xabat"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("5_fdtqb")
+count = 10
+spawn_cooldown = 0.25
+await_time_after = 1.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_lsaf4"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("8_jyon6")
+count = 1
+spawn_cooldown = 1.0
+await_time_after = 1.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_brqme"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("7_de1o6")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_7gpud"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_xabat"), SubResource("Resource_lsaf4"), SubResource("Resource_brqme")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_62x06"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("9_blcsv")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_dks4m"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("7_de1o6")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_f8nv8"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("8_jyon6")
+count = 5
+spawn_cooldown = 1.0
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_0e1oj"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_62x06"), SubResource("Resource_dks4m"), SubResource("Resource_f8nv8")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[sub_resource type="Resource" id="Resource_jnv5p"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("10_6j27r")
+count = 15
+spawn_cooldown = 0.1
+await_time_after = 2.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_4i5a6"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("8_jyon6")
+count = 5
+spawn_cooldown = 0.5
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_7dn07"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("5_fdtqb")
+count = 20
+spawn_cooldown = 0.1
+await_time_after = 2.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_0j28b"]
+script = ExtResource("3_qbapj")
+enemy = ExtResource("7_de1o6")
+count = 20
+spawn_cooldown = 0.5
+await_time_after = 0.0
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://c1j8ebq2e2h84"
+
+[sub_resource type="Resource" id="Resource_1rfi2"]
+script = ExtResource("2_b4lxq")
+components = Array[ExtResource("3_qbapj")]([SubResource("Resource_jnv5p"), SubResource("Resource_4i5a6"), SubResource("Resource_7dn07"), SubResource("Resource_0j28b")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://bmuoxxeydeye0"
+
+[resource]
+script = ExtResource("1_a48et")
+start_money = 7.5
+start_health = 100.0
+waves = Array[ExtResource("2_b4lxq")]([SubResource("Resource_8f187"), SubResource("Resource_ltoxb"), SubResource("Resource_r0o3c"), SubResource("Resource_i54g1"), SubResource("Resource_7gpud"), SubResource("Resource_0e1oj"), SubResource("Resource_1rfi2")])
+add_to_export = Array[String]([])
+not_allowed_to_export = Array[String](["add_to_export", "not_allowed_to_export", "choosen_properties", "metadata/_custom_type_script", "resource_local_to_scene", "resource_name", "resource_path", "script"])
+metadata/_custom_type_script = "uid://dt3fu3j4boo72"

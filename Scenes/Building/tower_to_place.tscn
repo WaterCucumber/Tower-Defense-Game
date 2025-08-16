@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtr26xinxc7qi"]
+
+[ext_resource type="Script" uid="uid://c67vj0i5uexlh" path="res://Scripts/Objects/Turret/fov_area_visualize.gd" id="1_hxlva"]
+[ext_resource type="Script" uid="uid://d5jp6mv67ira" path="res://Scripts/Building/tower_to_place.gd" id="1_q3ox2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3ox2"]
+
+[node name="TowerToPlace" type="Node2D"]
+script = ExtResource("1_q3ox2")
+
+[node name="FOV Area Visualizer" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0.42)
+script = ExtResource("1_hxlva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q3ox2")

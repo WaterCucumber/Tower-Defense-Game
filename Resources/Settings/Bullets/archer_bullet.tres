@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="BulletSettings" load_steps=13 format=3 uid="uid://cx0i12wu50d3b"]
+
+[ext_resource type="Texture2D" uid="uid://cie637deqpktb" path="res://Assets/Sprites/Bullet.png" id="1_0xblr"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="2_bk01f"]
+[ext_resource type="Script" uid="uid://d1nhqbcs7xb7h" path="res://Scripts/Objects/Bullet/Settings/bullet_speed_settings.gd" id="3_hbyuy"]
+[ext_resource type="Script" uid="uid://0cp1l83wgfxh" path="res://Scripts/Objects/Bullet/Settings/bullet_trajectory_settings.gd" id="4_4ct2t"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="5_hbyuy"]
+[ext_resource type="Script" uid="uid://dhwribshm3lf7" path="res://Scripts/Objects/Bullet/Settings/bullet_settings.gd" id="6_b2ich"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="7_46af3"]
+
+[sub_resource type="Resource" id="Resource_yv3i2"]
+script = ExtResource("2_bk01f")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_s0bv0"]
+script = ExtResource("3_hbyuy")
+base_speed = 1000.0
+metadata/_custom_type_script = "uid://d1nhqbcs7xb7h"
+
+[sub_resource type="Resource" id="Resource_tvt3n"]
+script = ExtResource("4_4ct2t")
+offset_type = 1
+metadata/_custom_type_script = "uid://0cp1l83wgfxh"
+
+[sub_resource type="Resource" id="Resource_b2ich"]
+script = ExtResource("2_bk01f")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_gojdr"]
+script = ExtResource("7_46af3")
+count = SubResource("Resource_b2ich")
+ignores = Array[ExtResource("5_hbyuy")]([])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[resource]
+script = ExtResource("6_b2ich")
+max_bounce = 0
+damage = SubResource("Resource_gojdr")
+lifetime = 5.0
+pierce = 0
+bullet_speed = SubResource("Resource_s0bv0")
+bullet_trajectory_settings = SubResource("Resource_tvt3n")
+bullet_collision_mask = 1
+bullet_animation = Array[Texture2D]([ExtResource("1_0xblr")])
+bullet_scale = SubResource("Resource_yv3i2")
+hitbox_size = Vector2(0, 0)
+sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://dhwribshm3lf7"

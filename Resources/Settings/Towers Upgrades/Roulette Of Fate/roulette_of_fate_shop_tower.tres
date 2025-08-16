@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="ShopTowerSettings" load_steps=23 format=3 uid="uid://cwx4d4422d6hn"]
+
+[ext_resource type="Script" uid="uid://by7w26q306o6w" path="res://Scripts/Objects/Turret/Settings/shop_tower_settings.gd" id="1_o6251"]
+[ext_resource type="Texture2D" uid="uid://bia2ah2p3ulrj" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Attack_5.png" id="3_25ysi"]
+[ext_resource type="Texture2D" uid="uid://cbkaf510qyqy2" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Attack_4.png" id="3_tj2bu"]
+[ext_resource type="Texture2D" uid="uid://drquqi6u1yphf" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Attack_6.png" id="4_jrx4b"]
+[ext_resource type="Texture2D" uid="uid://ch6jy8cpf0ptl" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Attack_7.png" id="5_r24up"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_be4mn"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="7_n5v86"]
+[ext_resource type="Resource" uid="uid://bk1kch6j2oki4" path="res://Resources/Settings/Bullets/roulette_of_fate_bullet.tres" id="8_2jc4b"]
+[ext_resource type="Texture2D" uid="uid://dlbudmn1uamxd" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Idle_0.png" id="9_ss12b"]
+[ext_resource type="Texture2D" uid="uid://c3mmwuvoojdue" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Idle_1.png" id="10_qtaac"]
+[ext_resource type="Texture2D" uid="uid://dnvjne8lsf5ww" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Idle_2.png" id="11_7ontd"]
+[ext_resource type="Texture2D" uid="uid://cs1wqtaxtkf2b" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Idle_3.png" id="12_87s2x"]
+[ext_resource type="Script" uid="uid://dep10uut4gn6v" path="res://Scripts/Objects/Turret/Settings/ranged_tower_settings.gd" id="13_b23x2"]
+
+[sub_resource type="Resource" id="Resource_3encd"]
+script = ExtResource("6_be4mn")
+count = 36.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_2sfxp"]
+script = ExtResource("6_be4mn")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_b5e65"]
+script = ExtResource("7_n5v86")
+min_count_koef = 1.0
+min_count = SubResource("Resource_2sfxp")
+max_count_koef = 1.0
+max_count = SubResource("Resource_3encd")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_gdg4e"]
+script = ExtResource("6_be4mn")
+count = 3.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_vyggx"]
+script = ExtResource("6_be4mn")
+count = 0.05
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_qfoa4"]
+script = ExtResource("7_n5v86")
+min_count_koef = 1.0
+min_count = SubResource("Resource_vyggx")
+max_count_koef = 1.0
+max_count = SubResource("Resource_gdg4e")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_tn17d"]
+script = ExtResource("6_be4mn")
+count = 5.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_tlagi"]
+script = ExtResource("6_be4mn")
+count = 360.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_tmc3b"]
+script = ExtResource("13_b23x2")
+spread = SubResource("Resource_tlagi")
+bullet_count = SubResource("Resource_b5e65")
+bullet_settings = ExtResource("8_2jc4b")
+use_custom_tower_scene = false
+radius = SubResource("Resource_tn17d")
+cooldown = SubResource("Resource_qfoa4")
+offset_type = 3
+debug_target_pos = false
+attack_anim = Array[Texture2D]([ExtResource("3_tj2bu"), ExtResource("3_25ysi"), ExtResource("4_jrx4b"), ExtResource("5_r24up")])
+idle_anim = Array[Texture2D]([ExtResource("9_ss12b"), ExtResource("10_qtaac"), ExtResource("11_7ontd"), ExtResource("12_87s2x")])
+metadata/_custom_type_script = "uid://dep10uut4gn6v"
+
+[resource]
+script = ExtResource("1_o6251")
+tower_texture = ExtResource("3_tj2bu")
+tower_name = "Roulette Of Fate"
+tower_cost = 30.0
+tower_sell_pct = 0.95
+place_tiles = Array[int]([1, 2, 4, 3])
+tower_settings = SubResource("Resource_tmc3b")
+metadata/_custom_type_script = "uid://by7w26q306o6w"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectVisualisation" load_steps=3 format=3 uid="uid://d1wj7day1aaes"]
+
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="1_rhn4l"]
+[ext_resource type="Texture2D" uid="uid://b3gq0yu7glv0o" path="res://Assets/Sprites/UI/HealthBoost.png" id="2_rhn4l"]
+
+[resource]
+script = ExtResource("1_rhn4l")
+name = "Health Boost"
+texture = ExtResource("2_rhn4l")
+metadata/_custom_type_script = "uid://b4hety026cymu"

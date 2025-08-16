@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimationTextures" load_steps=7 format=3 uid="uid://r6qt45unk4o2"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_xw7pj"]
+[ext_resource type="Texture2D" uid="uid://c7tnhfxspb1ff" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_3.png" id="2_3qth2"]
+[ext_resource type="Texture2D" uid="uid://bpkl4nahnetxc" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_4.png" id="3_ul8fp"]
+[ext_resource type="Texture2D" uid="uid://by01iaihsnsoe" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_5.png" id="4_emi4d"]
+[ext_resource type="Texture2D" uid="uid://ifau04jguxrs" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_6.png" id="5_u5jax"]
+[ext_resource type="Texture2D" uid="uid://m4aofmwphxbq" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Death_7.png" id="6_dw8hl"]
+
+[resource]
+script = ExtResource("1_xw7pj")
+textures = Array[Texture2D]([ExtResource("2_3qth2"), ExtResource("3_ul8fp"), ExtResource("4_emi4d"), ExtResource("5_u5jax"), ExtResource("6_dw8hl")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"

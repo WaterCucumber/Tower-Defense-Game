@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dotnacsafeecw"]
+
+[ext_resource type="Script" uid="uid://y1bsd03637sv" path="res://Scripts/UI/effect_texture_rect.gd" id="1_83ndp"]
+[ext_resource type="Texture2D" uid="uid://cg25bo5bxhjc8" path="res://Assets/Sprites/Turrets/UI/grass_tile.png" id="1_xn4b0"]
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="3_n2ude"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xn4b0"]
+bg_color = Color(0, 0, 0, 0.380392)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkyvp"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+
+[node name="EffectTextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(12, 12)
+offset_right = 12.0
+offset_bottom = 12.0
+pivot_offset = Vector2(6, 6)
+texture = ExtResource("1_xn4b0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_83ndp")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xn4b0")
+
+[node name="Count" type="Label" parent="CenterContainer/PanelContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+theme = ExtResource("3_n2ude")
+text = "25"
+label_settings = SubResource("LabelSettings_kkyvp")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://473y5odx3w3j"]
+
+[ext_resource type="Script" uid="uid://hrjcmo0ag2wy" path="res://test.gd" id="1_8uh7m"]
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="2_6uqi0"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_8uh7m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.615, 1.615)
+
+[node name="Count" type="Label" parent="."]
+offset_left = -290.0
+offset_top = -156.0
+offset_right = -111.0
+offset_bottom = -100.0
+theme = ExtResource("2_6uqi0")
+text = "123"
+
+[node name="RandomCount" type="Label" parent="."]
+offset_left = -292.0
+offset_top = -84.0
+offset_right = -172.0
+offset_bottom = -15.0
+theme = ExtResource("2_6uqi0")
+text = "123"

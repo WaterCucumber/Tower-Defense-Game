@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BulletSettings" load_steps=16 format=3 uid="uid://bqw1dr670ymi"]
+
+[ext_resource type="Texture2D" uid="uid://br0nlq6770mnd" path="res://Assets/Sprites/Turrets/Ranged/Ballista/Rock_0.png" id="1_cacn2"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="2_er7ap"]
+[ext_resource type="Texture2D" uid="uid://bllpmr76pjgyx" path="res://Assets/Sprites/Turrets/Ranged/Ballista/Rock_1.png" id="2_lbqyx"]
+[ext_resource type="Texture2D" uid="uid://d20hrre8c0g57" path="res://Assets/Sprites/Turrets/Ranged/Ballista/Rock_2.png" id="3_2myo0"]
+[ext_resource type="Script" uid="uid://d1nhqbcs7xb7h" path="res://Scripts/Objects/Bullet/Settings/bullet_speed_settings.gd" id="3_d5mke"]
+[ext_resource type="Script" uid="uid://0cp1l83wgfxh" path="res://Scripts/Objects/Bullet/Settings/bullet_trajectory_settings.gd" id="4_cacn2"]
+[ext_resource type="Script" uid="uid://dhwribshm3lf7" path="res://Scripts/Objects/Bullet/Settings/bullet_settings.gd" id="5_lbqyx"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="7_2myo0"]
+[ext_resource type="PackedScene" uid="uid://dd4kgu2ci3srm" path="res://Scenes/Effects/explosion.tscn" id="7_asemd"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="8_asemd"]
+
+[sub_resource type="Resource" id="Resource_yv3i2"]
+script = ExtResource("2_er7ap")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_s0bv0"]
+script = ExtResource("3_d5mke")
+base_speed = 1000.0
+metadata/_custom_type_script = "uid://d1nhqbcs7xb7h"
+
+[sub_resource type="Resource" id="Resource_tvt3n"]
+script = ExtResource("4_cacn2")
+offset_type = 1
+metadata/_custom_type_script = "uid://0cp1l83wgfxh"
+
+[sub_resource type="Resource" id="Resource_eghph"]
+script = ExtResource("2_er7ap")
+count = 3.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_720bp"]
+script = ExtResource("8_asemd")
+count = SubResource("Resource_eghph")
+ignores = Array[ExtResource("7_2myo0")]([])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[resource]
+script = ExtResource("5_lbqyx")
+max_bounce = 2
+damage = SubResource("Resource_720bp")
+lifetime = 5.0
+pierce = 1
+bullet_speed = SubResource("Resource_s0bv0")
+bullet_trajectory_settings = SubResource("Resource_tvt3n")
+bullet_collision_mask = 1
+bullet_animation = Array[Texture2D]([ExtResource("1_cacn2"), ExtResource("2_lbqyx"), ExtResource("3_2myo0")])
+bullet_scale = SubResource("Resource_yv3i2")
+hitbox_size = Vector2(0, 0)
+sprite_modulate = Color(1, 1, 1, 1)
+impact_effect = ExtResource("7_asemd")
+metadata/_custom_type_script = "uid://dhwribshm3lf7"

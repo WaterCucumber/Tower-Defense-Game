@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtdvoeqg2emos"]
+
+[ext_resource type="Script" uid="uid://cxtahdvc0ufid" path="res://Scripts/Objects/Turret/turret_animation.gd" id="1_byma3"]
+[ext_resource type="Script" uid="uid://blinqsk84ks5w" path="res://Scripts/Objects/Turret/turret.gd" id="1_ftmyc"]
+[ext_resource type="Texture2D" uid="uid://yctcmkjfoagg" path="res://Assets/Sprites/App Ico/Enemy1_Effect_Scaled.png" id="2_ovhp7"]
+[ext_resource type="Texture2D" uid="uid://bf07skllodboh" path="res://Assets/Sprites/Weapon Holders/Hard.png" id="5_c7dk2"]
+[ext_resource type="Script" uid="uid://c67vj0i5uexlh" path="res://Scripts/Objects/Turret/fov_area_visualize.gd" id="9_1hat2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7dk2"]
+radius = 150.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5aox"]
+size = Vector2(12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovhp7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c7dk2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffmux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ovhp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_ftmyc")
+
+[node name="FOV Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FOV Area"]
+shape = SubResource("CircleShape2D_c7dk2")
+
+[node name="Building Area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building Area"]
+shape = SubResource("RectangleShape2D_a5aox")
+
+[node name="FOV Area Visualize" type="Polygon2D" parent="." node_paths=PackedStringArray("shape")]
+visible = false
+z_index = 1
+color = Color(0, 0.6, 0.7, 0.42)
+script = ExtResource("9_1hat2")
+shape = NodePath("../FOV Area/CollisionShape2D")
+
+[node name="TurretAnimation" type="Node" parent="."]
+script = ExtResource("1_byma3")
+
+[node name="WeaponHolder" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ovhp7")
+autoplay = "default"
+frame_progress = 0.654138
+
+[node name="Animation" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Animation"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_ffmux")
+frame_progress = 0.880555
+
+[connection signal="area_entered" from="FOV Area" to="." method="_on_fov_area_area_entered"]
+[connection signal="area_exited" from="FOV Area" to="." method="_on_fov_area_area_exited"]
+[connection signal="area_entered" from="Building Area" to="." method="_on_building_area_area_entered"]
+[connection signal="area_exited" from="Building Area" to="." method="_on_building_area_area_exited"]
+[connection signal="mouse_entered" from="Building Area" to="." method="_on_building_area_mouse_entered"]
+[connection signal="mouse_exited" from="Building Area" to="." method="_on_building_area_mouse_exited"]

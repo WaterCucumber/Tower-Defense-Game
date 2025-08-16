@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="BulletSettings" load_steps=24 format=3 uid="uid://0qfkpjg4nvho"]
+
+[ext_resource type="Texture2D" uid="uid://bq8sj43haibiq" path="res://Assets/Sprites/Turrets/Ranged/Cannon/Bomb_0.png" id="1_ex18e"]
+[ext_resource type="Texture2D" uid="uid://bi2b73owjtghy" path="res://Assets/Sprites/Turrets/Ranged/Cannon/Bomb_1.png" id="2_tw3ok"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="2_xatim"]
+[ext_resource type="Texture2D" uid="uid://c5pp6rgonpda8" path="res://Assets/Sprites/Turrets/Ranged/Cannon/Bomb_2.png" id="3_0b116"]
+[ext_resource type="Script" uid="uid://d1nhqbcs7xb7h" path="res://Scripts/Objects/Bullet/Settings/bullet_speed_settings.gd" id="3_n4ikg"]
+[ext_resource type="Script" uid="uid://0cp1l83wgfxh" path="res://Scripts/Objects/Bullet/Settings/bullet_trajectory_settings.gd" id="4_knbkg"]
+[ext_resource type="Script" uid="uid://b3ts7sbiv4qnx" path="res://Scripts/Resources/Effects/damage_over_time_effect.gd" id="4_wmwi2"]
+[ext_resource type="Script" uid="uid://dhwribshm3lf7" path="res://Scripts/Objects/Bullet/Settings/bullet_settings.gd" id="5_ex18e"]
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="5_tw3ok"]
+[ext_resource type="Script" uid="uid://chmuhbcl5s8i" path="res://Scripts/Resources/Effect Ignores/armor_effect_ignore.gd" id="6_j0heu"]
+[ext_resource type="PackedScene" uid="uid://dd4kgu2ci3srm" path="res://Scenes/Effects/explosion.tscn" id="8_vtdif"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="9_wmwi2"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="10_vtdif"]
+
+[sub_resource type="Resource" id="Resource_ipqp2"]
+script = ExtResource("2_xatim")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_wb5gk"]
+script = ExtResource("6_j0heu")
+ignore_value = 2.0
+can_be_less_than_zero = false
+metadata/_custom_type_script = "uid://chmuhbcl5s8i"
+
+[sub_resource type="Resource" id="Resource_dcgm2"]
+script = ExtResource("10_vtdif")
+count = SubResource("Resource_ipqp2")
+ignores = Array[ExtResource("9_wmwi2")]([SubResource("Resource_wb5gk")])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[sub_resource type="Resource" id="Resource_0b116"]
+script = ExtResource("5_tw3ok")
+name = "Boom!"
+texture = ExtResource("1_ex18e")
+metadata/_custom_type_script = "uid://b4hety026cymu"
+
+[sub_resource type="Resource" id="Resource_ex18e"]
+script = ExtResource("4_wmwi2")
+damage = SubResource("Resource_dcgm2")
+max_stack_count = 5
+infinite_stack_count = false
+duration = 3.0
+is_infinite = false
+visual = SubResource("Resource_0b116")
+metadata/_custom_type_script = "uid://b3ts7sbiv4qnx"
+
+[sub_resource type="Resource" id="Resource_yv3i2"]
+script = ExtResource("2_xatim")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_s0bv0"]
+script = ExtResource("3_n4ikg")
+base_speed = 1000.0
+metadata/_custom_type_script = "uid://d1nhqbcs7xb7h"
+
+[sub_resource type="Resource" id="Resource_tvt3n"]
+script = ExtResource("4_knbkg")
+offset_type = 1
+metadata/_custom_type_script = "uid://0cp1l83wgfxh"
+
+[sub_resource type="Resource" id="Resource_j0heu"]
+script = ExtResource("2_xatim")
+count = 5.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_c24q4"]
+script = ExtResource("10_vtdif")
+count = SubResource("Resource_j0heu")
+ignores = Array[ExtResource("9_wmwi2")]([])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[resource]
+script = ExtResource("5_ex18e")
+max_bounce = 0
+damage = SubResource("Resource_c24q4")
+lifetime = 5.0
+pierce = 0
+bullet_speed = SubResource("Resource_s0bv0")
+bullet_trajectory_settings = SubResource("Resource_tvt3n")
+bullet_effect = SubResource("Resource_ex18e")
+bullet_collision_mask = 1
+bullet_animation = Array[Texture2D]([ExtResource("1_ex18e"), ExtResource("2_tw3ok"), ExtResource("3_0b116")])
+bullet_scale = SubResource("Resource_yv3i2")
+hitbox_size = Vector2(0, 0)
+sprite_modulate = Color(1, 1, 1, 1)
+impact_effect = ExtResource("8_vtdif")
+metadata/_custom_type_script = "uid://dhwribshm3lf7"

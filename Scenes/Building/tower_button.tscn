@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0fif6tvhyq1d"]
+
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="1_78nc7"]
+[ext_resource type="Script" uid="uid://dng136k8epx5s" path="res://Scripts/Building/tower_button.gd" id="1_n541g"]
+[ext_resource type="Texture2D" uid="uid://ci81k3c5208vv" path="res://Assets/Sprites/UI/Coin.png" id="4_5wron"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5wron"]
+font_size = 8
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l2kg0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jybrh"]
+font_size = 8
+
+[node name="TowerButton" type="Button"]
+custom_minimum_size = Vector2(48.7, 65.28)
+script = ExtResource("1_n541g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(8.85, 16.23)
+layout_mode = 2
+theme = ExtResource("1_78nc7")
+text = "Tower Name"
+label_settings = SubResource("LabelSettings_5wron")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TowerImage" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_l2kg0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cost" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="VBoxContainer/Cost"]
+layout_mode = 2
+theme = ExtResource("1_78nc7")
+text = "123"
+label_settings = SubResource("LabelSettings_jybrh")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Cost"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture = ExtResource("4_5wron")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Placement" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

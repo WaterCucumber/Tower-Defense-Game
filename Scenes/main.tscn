@@ -1,0 +1,383 @@
+[gd_scene load_steps=52 format=4 uid="uid://g32eklclybr7"]
+
+[ext_resource type="Script" uid="uid://b1l1vayt6jbiv" path="res://Scripts/Managers/player_stats.gd" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="3_h1bgf"]
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="4_21xkr"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="4_b3802"]
+[ext_resource type="Script" uid="uid://buwlwq4hoo7lb" path="res://Scripts/Components/health_component.gd" id="4_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ci81k3c5208vv" path="res://Assets/Sprites/UI/Coin.png" id="5_6bp64"]
+[ext_resource type="PackedScene" uid="uid://d0fif6tvhyq1d" path="res://Scenes/Building/tower_button.tscn" id="6_6iyac"]
+[ext_resource type="Texture2D" uid="uid://of0qw4k0vwpe" path="res://Assets/Sprites/UI/Live.png" id="6_344ge"]
+[ext_resource type="Script" uid="uid://4ptbll4rjkq7" path="res://Scripts/Level/path_spawner.gd" id="9_hpc6h"]
+[ext_resource type="Script" uid="uid://dhgfpgv8tv53h" path="res://Scripts/Managers/level_manager.gd" id="10_hptm8"]
+[ext_resource type="TileSet" uid="uid://bdpf8awdctfov" path="res://Resources/main_tileset.tres" id="11_e08e2"]
+[ext_resource type="Script" uid="uid://by7w26q306o6w" path="res://Scripts/Objects/Turret/Settings/shop_tower_settings.gd" id="12_jkdf5"]
+[ext_resource type="Script" uid="uid://c13ysaxetbbcm" path="res://Scripts/Managers/wave_manager.gd" id="12_neg2b"]
+[ext_resource type="Script" uid="uid://dgu58j024onwp" path="res://Scripts/Managers/build_manager.gd" id="13_fdnlq"]
+[ext_resource type="Script" uid="uid://iyigg2fjubg2" path="res://Scripts/Objects/Turret/Settings/melee_tower_settings.gd" id="13_wsu2k"]
+[ext_resource type="Resource" uid="uid://c64cm4l34ejt2" path="res://Resources/Settings/Towers Upgrades/Ballista/ballista_shop_tower.tres" id="14_b3802"]
+[ext_resource type="Resource" uid="uid://c1jvifk754tws" path="res://Resources/Settings/Towers Upgrades/Archer/archer_shop_tower.tres" id="14_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://c2s4oiinj1a25" path="res://Assets/Sprites/Turrets/Melee/Knight/Sword.png" id="14_k12tt"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="15_7k868"]
+[ext_resource type="Resource" uid="uid://djeuulk1sejl7" path="res://Resources/Settings/Enemy/ghost.tres" id="15_jwpg7"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="15_neg2b"]
+[ext_resource type="Resource" uid="uid://yla8v648ykgr" path="res://Resources/Settings/Towers Upgrades/Cannon/cannon_shop_tower.tres" id="15_wsu2k"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="16_k2e45"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="16_r33sp"]
+[ext_resource type="Resource" uid="uid://b7lluajc1fpw3" path="res://Resources/Settings/Enemy/ghostentacle.tres" id="17_536cc"]
+[ext_resource type="Resource" uid="uid://chhx8ivdp8age" path="res://Resources/Settings/Enemy/ghost_crab.tres" id="18_aqgau"]
+[ext_resource type="Resource" uid="uid://b77007db14guw" path="res://Resources/Settings/Enemy/glitched_ghost.tres" id="19_8cuat"]
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="19_536cc"]
+[ext_resource type="Script" uid="uid://2q553c2rg8n0" path="res://Scripts/UI/tower_ui.gd" id="20_k2e45"]
+[ext_resource type="Resource" uid="uid://04a8gwdpqg23" path="res://Resources/Settings/Enemy/glitched_ghostentacle.tres" id="20_o1aky"]
+[ext_resource type="Texture2D" uid="uid://cbkaf510qyqy2" path="res://Assets/Sprites/Turrets/Ranged/Roulette Of Fate/Roulette_Of_Fate_Attack_4.png" id="20_r33sp"]
+[ext_resource type="Script" uid="uid://gw438bmwbx63" path="res://Scripts/UI/tooltip_interact.gd" id="21_aqgau"]
+[ext_resource type="Resource" uid="uid://io30ir41s702" path="res://Resources/Settings/Enemy/glitched_ghost_crab.tres" id="21_kwxat"]
+[ext_resource type="Script" uid="uid://ddmdgesmmvkx5" path="res://Scripts/Level/generated_tilemap.gd" id="22_neg2b"]
+[ext_resource type="PackedScene" uid="uid://cy5o3weqpkrwv" path="res://Scenes/UI/tooltip.tscn" id="23_o1aky"]
+[ext_resource type="AudioStream" uid="uid://c1ncjtlina6v6" path="res://Assets/Musics/N34_Stars.wav" id="25_536cc"]
+[ext_resource type="Resource" uid="uid://cqaj5y77g3eu1" path="res://Resources/Settings/Enemy/ghost_comb.tres" id="31_kltya"]
+
+[sub_resource type="Resource" id="Resource_fevyy"]
+script = ExtResource("15_7k868")
+count = 100.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_pdsj5"]
+script = ExtResource("4_b3802")
+start_health = SubResource("Resource_fevyy")
+health_effects = Array[ExtResource("3_h1bgf")]([])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_b3802"]
+script = ExtResource("15_7k868")
+count = 0.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_55jeb"]
+script = ExtResource("15_7k868")
+count = 5.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_gsvbx"]
+script = ExtResource("16_r33sp")
+count = SubResource("Resource_55jeb")
+ignores = Array[ExtResource("15_neg2b")]([])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[sub_resource type="Resource" id="Resource_ee4r6"]
+script = ExtResource("15_7k868")
+count = 3.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_gt3je"]
+script = ExtResource("13_wsu2k")
+swing_rotating = Vector2(180, 0)
+swing_time = 0.1
+damage = SubResource("Resource_gsvbx")
+weapon_texture = ExtResource("14_k12tt")
+use_custom_tower_scene = false
+radius = SubResource("Resource_ee4r6")
+cooldown = SubResource("Resource_b3802")
+offset_type = 0
+debug_target_pos = false
+weapon_size = Vector2(1, 1)
+metadata/_custom_type_script = "uid://iyigg2fjubg2"
+
+[sub_resource type="Resource" id="Resource_3pmx8"]
+script = ExtResource("12_jkdf5")
+tower_texture = ExtResource("14_k12tt")
+tower_name = "Knight"
+tower_cost = 5.0
+tower_sell_pct = 0.95
+place_tiles = Array[int]([1])
+tower_settings = SubResource("Resource_gt3je")
+tower_upgrades = Array[ExtResource("19_536cc")]([])
+metadata/_custom_type_script = "uid://by7w26q306o6w"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqgau"]
+bg_color = Color(0, 0, 0, 0.32549)
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="Curve2D" id="Curve2D_aa8k8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -218, -88, 0, 0, 0, 0, -57, -88, 0, 0, 0, 0, -56, -39, 0, 0, 0, 0, 57, -39, 0, 0, 0, 0, 57, 24, 0, 0, 0, 0, -103, 24, 0, 0, 0, 0, -104, -40, 0, 0, 0, 0, -168, -40, 0, 0, 0, 0, -168, 88, 0, 0, 0, 0, 218, 87)
+}
+point_count = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqrg6"]
+size = Vector2(2, 278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwwfm"]
+size = Vector2(642, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_neg2b"]
+seed = -880924060
+frequency = 0.0814
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r33sp"]
+seed = 1147571240
+frequency = 0.0793
+
+[node name="Main" type="Node2D"]
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource("3_8gbba")
+
+[node name="HealthComponent" type="Node2D" parent="PlayerStats"]
+script = ExtResource("4_ynf5e")
+health = SubResource("Resource_pdsj5")
+metadata/_custom_type_script = "uid://buwlwq4hoo7lb"
+
+[node name="BuildManager" type="Node" parent="."]
+script = ExtResource("13_fdnlq")
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("10_hptm8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Currency" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.071
+anchor_bottom = 0.071
+offset_left = 19.0
+offset_top = -28.008
+offset_right = 139.0
+offset_bottom = 27.992
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Money" type="HBoxContainer" parent="CanvasLayer/UI/Currency"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Currency/Money"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+text = "10"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Currency/Money"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture = ExtResource("5_6bp64")
+expand_mode = 1
+
+[node name="Health" type="HBoxContainer" parent="CanvasLayer/UI/Currency"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Currency/Health"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+text = "100"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/Currency/Health"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("6_344ge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TowerShop" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 502.0
+offset_right = 323.0
+offset_bottom = 567.0
+scale = Vector2(2, 2)
+
+[node name="TowerButton2" parent="CanvasLayer/UI/TowerShop" instance=ExtResource("6_6iyac")]
+layout_mode = 2
+shop_tower_settings = ExtResource("14_jkdf5")
+
+[node name="TowerButton4" parent="CanvasLayer/UI/TowerShop" instance=ExtResource("6_6iyac")]
+visible = false
+layout_mode = 2
+shop_tower_settings = ExtResource("14_b3802")
+
+[node name="TowerButton" parent="CanvasLayer/UI/TowerShop" instance=ExtResource("6_6iyac")]
+visible = false
+layout_mode = 2
+shop_tower_settings = SubResource("Resource_3pmx8")
+
+[node name="TowerButton3" parent="CanvasLayer/UI/TowerShop" instance=ExtResource("6_6iyac")]
+visible = false
+layout_mode = 2
+shop_tower_settings = ExtResource("15_wsu2k")
+
+[node name="ReadyButton" type="Button" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 546.0
+offset_top = 70.0
+offset_right = 634.0
+offset_bottom = 101.0
+mouse_filter = 1
+theme = ExtResource("4_21xkr")
+text = "Ready!"
+
+[node name="TowerUI" type="PanelContainer" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 124.0
+offset_right = 1133.0
+offset_bottom = 386.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqgau")
+script = ExtResource("20_k2e45")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/TowerUI"]
+layout_mode = 2
+
+[node name="TowerName" type="Label" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+text = "TOWER NAME"
+
+[node name="TowerImage" type="TextureRect" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("20_r33sp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Damage" type="RichTextLabel" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[img]res://Assets/Sprites/UI/damage_icon.png[/img] err"
+fit_content = true
+scroll_active = false
+script = ExtResource("21_aqgau")
+
+[node name="Tooltip" parent="CanvasLayer/UI/TowerUI/HBoxContainer/Damage" instance=ExtResource("23_o1aky")]
+layout_mode = 2
+
+[node name="Radius" type="RichTextLabel" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+bbcode_enabled = true
+text = "[img]res://Assets/Sprites/UI/radius_icon.png[/img] err"
+fit_content = true
+scroll_active = false
+script = ExtResource("21_aqgau")
+
+[node name="Tooltip" parent="CanvasLayer/UI/TowerUI/HBoxContainer/Radius" instance=ExtResource("23_o1aky")]
+layout_mode = 2
+
+[node name="Cooldown" type="RichTextLabel" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_21xkr")
+bbcode_enabled = true
+text = "[img]res://Assets/Sprites/UI/cooldown_icon.png[/img] err"
+fit_content = true
+scroll_active = false
+script = ExtResource("21_aqgau")
+
+[node name="Tooltip" parent="CanvasLayer/UI/TowerUI/HBoxContainer/Cooldown" instance=ExtResource("23_o1aky")]
+layout_mode = 2
+
+[node name="UpgradeButtons" type="HFlowContainer" parent="CanvasLayer/UI/TowerUI/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_536cc")
+volume_db = -5.311
+autoplay = true
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Level"]
+curve = SubResource("Curve2D_aa8k8")
+
+[node name="PathSpawner" type="Node2D" parent="Level" node_paths=PackedStringArray("path")]
+z_index = -1
+script = ExtResource("9_hpc6h")
+path = NodePath("../Path2D")
+
+[node name="PathVisual" type="Line2D" parent="Level/PathSpawner"]
+width = 1.0
+default_color = Color(0.374139, 0.374139, 0.374139, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Level"]
+zoom = Vector2(1.74, 1.74)
+
+[node name="Borders" type="StaticBody2D" parent="Level"]
+position = Vector2(1, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Borders"]
+position = Vector2(215, 0)
+shape = SubResource("RectangleShape2D_kqrg6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/Borders"]
+position = Vector2(-216, 1)
+shape = SubResource("RectangleShape2D_kqrg6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Level/Borders"]
+position = Vector2(-2, -137)
+shape = SubResource("RectangleShape2D_nwwfm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Level/Borders"]
+position = Vector2(-1, 136)
+shape = SubResource("RectangleShape2D_nwwfm")
+
+[node name="Tilemap" type="Node2D" parent="Level" node_paths=PackedStringArray("path_2d")]
+z_index = -3
+position = Vector2(-209, -128)
+script = ExtResource("22_neg2b")
+path_2d = NodePath("../Path2D")
+rock_noise = SubResource("FastNoiseLite_neg2b")
+lava_density = 1.0
+rock_threshold = 0.253
+water_noise = SubResource("FastNoiseLite_r33sp")
+water_threshold = 0.36
+
+[node name="GrassLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAGAAEAAAAHAAcAAAAKAAEAAAAHAAgAAAAGAAEAAAAOAA4AAAAGAAEAAAARAAQAAAAGAAEAAAAYAAsAAAACAAEAAAAYAAwAAAAGAAEAAAAZAAsAAAAGAAEAAAARAAUAAAAKAAEAAAAPAA8AAAAGAAEAAAAOAA8AAAACAAEAAAAIAAgAAAAGAAEAAAAIAAcAAAAGAAEAAAAXAAMAAAAKAAEAAAABAAAAAAACAAEAAAAHAAAAAAACAAEAAAAHAAMAAAAGAAEAAAAHAAQAAAAGAAEAAAALAAsAAAACAAEAAAAMAAoAAAAKAAEAAAAZAAwAAAACAAEAAAAIAAEAAAACAAEAAAAAAAEAAAAKAAEAAAAPAAAAAAAKAAEAAAAGAAMAAAAGAAEAAAAPAA4AAAACAAEAAAADAA8AAAAKAAEAAAAEAA8AAAAKAAEAAAALAAoAAAAGAAEAAAAVAAAAAAAKAAEAAAAFAAYAAAAKAAEAAAAFAAcAAAAGAAEAAAAGAA8AAAACAAEAAAAPAAMAAAACAAEAAAAQAAMAAAAKAAEAAAAAAAcAAAAGAAEAAAAAAAgAAAAGAAEAAAABAAEAAAAGAAEAAAAEAAQAAAACAAEAAAAFAA4AAAAKAAEAAAAFAA8AAAACAAEAAAAMAAsAAAACAAEAAAAMAA4AAAACAAEAAAANAA4AAAAKAAEAAAAOAAwAAAAKAAEAAAAPAAQAAAAGAAEAAAAQAAQAAAAKAAEAAAAXAAwAAAAGAAEAAAAAAAkAAAAGAAEAAAANAAsAAAACAAEAAAATAAQAAAAKAAEAAAATAAUAAAACAAEAAAAWAAQAAAAKAAEAAAAXAAQAAAACAAEAAAAXAAUAAAAKAAEAAAAYAAUAAAAGAAEAAAAZAAUAAAACAAEAAAAZAAYAAAAKAAEAAAAJAAcAAAACAAEAAAAJAAgAAAAKAAEAAAAXAAsAAAAGAAEAAAAEAAEAAAACAAEAAAAEAAwAAAAKAAEAAAAEAA4AAAACAAEAAAAFAAwAAAACAAEAAAAGAAAAAAAKAAEAAAAGAAEAAAAGAAEAAAAPAAoAAAACAAEAAAAPAAsAAAACAAEAAAAPAAwAAAAGAAEAAAAQAAwAAAAKAAEAAAARAAkAAAAKAAEAAAARAAwAAAAGAAEAAAASAAsAAAACAAEAAAATAAwAAAAKAAEAAAAXAAAAAAAKAAEAAAAYAAMAAAACAAEAAAAYAAQAAAACAAEAAAAYAAoAAAAGAAEAAAAZAAAAAAACAAEAAAAZAAMAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAAAAwAAAACAAEAAAAAAA0AAAAKAAEAAAAAAA4AAAACAAEAAAABAAoAAAACAAEAAAABAAsAAAACAAEAAAABAAwAAAAGAAEAAAABAA0AAAAGAAEAAAADAAsAAAAGAAEAAAADAAwAAAAGAAEAAAAFAAgAAAACAAEAAAALAAAAAAAKAAEAAAAMAAAAAAAGAAEAAAANAAAAAAAGAAEAAAARAAYAAAAKAAEAAAASAAUAAAAKAAEAAAAUAAUAAAACAAEAAAAUAAYAAAAGAAEAAAAUAAcAAAACAAEAAAAWAAAAAAAKAAEAAAAWAAUAAAAGAAEAAAAWAAYAAAACAAEAAAAWAAsAAAAKAAEAAAAWAAwAAAAGAAEAAAAXAAYAAAACAAEAAAAYAAIAAAACAAEAAAAYAAYAAAACAAEAAAAZAAEAAAACAAEAAAAZAAIAAAAKAAEAAAAZAAcAAAAKAAEAAAAZAAgAAAACAAEAAAAZAAkAAAACAAEAAAADAA4AAAAGAAEAAAAEAAsAAAAKAAEAAAAFAAsAAAACAAEAAAAGAAoAAAAKAAEAAAAGAAsAAAAKAAEAAAAGAAwAAAAGAAEAAAAHAAoAAAAGAAEAAAAHAAsAAAACAAEAAAAHAAwAAAAGAAEAAAAIAAoAAAACAAEAAAAIAAsAAAACAAEAAAAIAAwAAAAGAAEAAAAJAAoAAAAGAAEAAAAQAAoAAAAGAAEAAAAQAAsAAAAKAAEAAAARAAMAAAACAAEAAAARAAoAAAAKAAEAAAARAAsAAAAGAAEAAAASAAMAAAAGAAEAAAASAAQAAAACAAEAAAASAAwAAAAGAAEAAAASAA4AAAAKAAEAAAASAA8AAAACAAEAAAATAAMAAAAKAAEAAAATAA4AAAAGAAEAAAATAA8AAAACAAEAAAAUAAIAAAAGAAEAAAAUAAMAAAACAAEAAAAUAAQAAAAGAAEAAAAUAAoAAAACAAEAAAAUAA4AAAACAAEAAAAVAAEAAAAKAAEAAAAVAAIAAAAKAAEAAAAVAAMAAAAGAAEAAAAVAAQAAAACAAEAAAAVAAUAAAACAAEAAAAVAAYAAAAKAAEAAAAVAAcAAAAGAAEAAAAVAAgAAAAKAAEAAAAWAAEAAAACAAEAAAAWAAIAAAAKAAEAAAAWAAMAAAAKAAEAAAAWAAcAAAAKAAEAAAAXAAEAAAAKAAEAAAAXAAIAAAAKAAEAAAAXAAcAAAAGAAEAAAAXAAoAAAACAAEAAAAYAAAAAAACAAEAAAAYAAEAAAAGAAEAAAAYAAcAAAAGAAEAAAAAAAQAAAACAAEAAAAAAAUAAAACAAEAAAAAAAYAAAACAAEAAAABAAMAAAAKAAEAAAABAAUAAAAGAAEAAAABAAYAAAAKAAEAAAABAAcAAAACAAEAAAABAAgAAAAKAAEAAAABAAkAAAAKAAEAAAADAAYAAAAGAAEAAAADAAcAAAAGAAEAAAADAAgAAAAKAAEAAAADAAkAAAACAAEAAAADAAoAAAAKAAEAAAAEAAYAAAACAAEAAAAEAAcAAAAGAAEAAAAEAAgAAAAGAAEAAAAEAAkAAAAGAAEAAAAEAAoAAAAGAAEAAAAFAAQAAAAKAAEAAAAFAAkAAAACAAEAAAAFAAoAAAAGAAEAAAAGAAQAAAACAAEAAAAGAA4AAAAGAAEAAAAHAA4AAAAKAAEAAAAHAA8AAAAGAAEAAAAIAAMAAAAGAAEAAAAIAA8AAAAGAAEAAAAKAAMAAAAKAAEAAAAMAA8AAAAGAAEAAAANAAEAAAAGAAEAAAANAAQAAAAGAAEAAAANAAYAAAACAAEAAAANAA8AAAAGAAEAAAAOAAAAAAAGAAEAAAAOAAEAAAAGAAEAAAAOAAIAAAACAAEAAAAOAAQAAAAGAAEAAAAOAAYAAAAKAAEAAAAPAAEAAAAGAAEAAAAPAAIAAAACAAEAAAAPAAYAAAACAAEAAAAVAAkAAAAGAAEAAAAVAAoAAAAGAAEAAAAWAAgAAAACAAEAAAAWAAkAAAAKAAEAAAAWAAoAAAAGAAEAAAAXAAgAAAAGAAEAAAAXAAkAAAAGAAEAAAAYAAgAAAAGAAEAAAAYAAkAAAAKAAEAAAACAAAAAAACAAEAAAADAAAAAAAKAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAAGAAEAAAAFAAEAAAAKAAEAAAAHAAEAAAAKAAEAAAAHAAUAAAAGAAEAAAAHAAYAAAAGAAEAAAAIAAAAAAAGAAEAAAAIAAUAAAAGAAEAAAAIAAYAAAAGAAEAAAAIAA4AAAACAAEAAAAJAA4AAAAGAAEAAAAJAA8AAAAKAAEAAAAKAA8AAAAKAAEAAAALAAQAAAAGAAEAAAALAA8AAAAGAAEAAAAMAAQAAAAGAAEAAAAQAAAAAAAKAAEAAAAQAAIAAAACAAEAAAAQAA4AAAAKAAEAAAAQAA8AAAAKAAEAAAARAAIAAAACAAEAAAARAA4AAAACAAEAAAARAA8AAAACAAEAAAASAAIAAAAGAAEAAAATAAIAAAAGAAEAAAAUAAAAAAAKAAEAAAAUAAEAAAAKAAEAAAAZAAoAAAAGAAEAAAA=")
+tile_set = ExtResource("11_e08e2")
+
+[node name="RockLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAEAAAAAAA8AAAABAAEAAAABAA4AAAAFAAEAAAABAA8AAAABAAEAAAACAA4AAAAFAAEAAAACAA8AAAAJAAEAAAAIAAQAAAAFAAEAAAAJAAYAAAAFAAEAAAAJAAsAAAAJAAEAAAAJAAwAAAAFAAEAAAAKAAQAAAABAAEAAAAKAAYAAAAFAAEAAAAKAAcAAAAFAAEAAAAKAAgAAAAJAAEAAAAKAAoAAAABAAEAAAAKAAsAAAAFAAEAAAAKAAwAAAABAAEAAAAKAA4AAAAFAAEAAAALAAgAAAAJAAEAAAALAAwAAAAFAAEAAAALAA4AAAAJAAEAAAAMAAYAAAAFAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAEAAAAMAAwAAAAJAAEAAAANAAcAAAAJAAEAAAANAAgAAAABAAEAAAANAAoAAAAFAAEAAAANAAwAAAABAAEAAAAOAAcAAAAFAAEAAAAOAAoAAAABAAEAAAAOAAsAAAAJAAEAAAAPAAcAAAAJAAEAAAAPAAgAAAABAAEAAAARAAcAAAABAAEAAAARAAgAAAAJAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAAJAAEAAAASAAkAAAAJAAEAAAASAAoAAAABAAEAAAATAAYAAAABAAEAAAATAAcAAAABAAEAAAATAAgAAAAFAAEAAAATAAkAAAABAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAAUAAgAAAABAAEAAAAUAAkAAAAJAAEAAAAUAAsAAAAJAAEAAAAUAAwAAAABAAEAAAAVAAsAAAAFAAEAAAAVAAwAAAABAAEAAAAWAA4AAAAJAAEAAAAXAA4AAAAFAAEAAAAXAA8AAAABAAEAAAAYAA4AAAAJAAEAAAAYAA8AAAAFAAEAAAAZAAQAAAABAAEAAAAZAA4AAAAFAAEAAAA=")
+tile_set = ExtResource("11_e08e2")
+
+[node name="WaterLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_map_data = PackedByteArray("AAABAAQAAAADAAEAAAACAAEAAAADAAEAAAACAAMAAAADAAEAAAACAAQAAAADAAEAAAADAAEAAAADAAEAAAADAAMAAAADAAEAAAADAAQAAAADAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAJAAAAAAADAAEAAAAJAAEAAAADAAEAAAAKAAAAAAADAAEAAAAKAAEAAAADAAEAAAAKAAIAAAADAAEAAAALAAEAAAADAAEAAAALAAIAAAADAAEAAAALAAMAAAADAAEAAAAMAAEAAAADAAEAAAAMAAIAAAADAAEAAAAMAAMAAAADAAEAAAANAAIAAAADAAEAAAANAAMAAAADAAEAAAAOAAMAAAADAAEAAAAQAAEAAAADAAEAAAARAAAAAAADAAEAAAARAAEAAAADAAEAAAASAAAAAAADAAEAAAASAAEAAAADAAEAAAATAAAAAAADAAEAAAATAAEAAAADAAEAAAAUAA8AAAADAAEAAAAVAA4AAAADAAEAAAAVAA8AAAADAAEAAAAWAA8AAAADAAEAAAAZAA8AAAADAAEAAAA=")
+tile_set = ExtResource("11_e08e2")
+
+[node name="LavaLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_map_data = PackedByteArray("AAALAAYAAAAAAAEAAAALAAcAAAAAAAEAAAAOAAgAAAAAAAEAAAA=")
+tile_set = ExtResource("11_e08e2")
+
+[node name="BuffLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_set = ExtResource("11_e08e2")
+
+[node name="PathLayer" type="TileMapLayer" parent="Level/Tilemap"]
+tile_map_data = PackedByteArray("AAAAAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAIAAAACAAAAAAADAAIAAAADAAAAAAAEAAIAAAADAAAAAAAFAAIAAAADAAAAAAAGAAIAAAACAAAAAAAHAAIAAAAKAAAAAAAIAAIAAAADAAAAAAAJAAIAAAADAAAAAAAJAAMAAAACAAAAAAAJAAQAAAABAAAAAAAJAAUAAAAFAAAAAAAKAAUAAAAJAAAAAAALAAUAAAABAAAAAAAMAAUAAAAFAAAAAAANAAUAAAAKAAAAAAAOAAUAAAACAAAAAAAPAAUAAAAKAAAAAAAQAAUAAAAKAAAAAAAQAAYAAAAGAAAAAAAQAAcAAAABAAAAAAAQAAgAAAAJAAAAAAAQAAkAAAAGAAAAAAAPAAkAAAAFAAAAAAAOAAkAAAABAAAAAAANAAkAAAABAAAAAAAMAAkAAAAKAAAAAAALAAkAAAABAAAAAAAKAAkAAAABAAAAAAAJAAkAAAAGAAAAAAAIAAkAAAAKAAAAAAAHAAkAAAACAAAAAAAGAAkAAAAGAAAAAAAGAAgAAAACAAAAAAAGAAcAAAAGAAAAAAAGAAYAAAAGAAAAAAAGAAUAAAAGAAAAAAAFAAUAAAACAAAAAAAEAAUAAAAGAAAAAAADAAUAAAADAAAAAAACAAUAAAADAAAAAAACAAYAAAACAAAAAAACAAcAAAACAAAAAAACAAgAAAACAAAAAAACAAkAAAACAAAAAAACAAoAAAAKAAAAAAACAAsAAAAKAAAAAAACAAwAAAAKAAAAAAACAA0AAAAKAAAAAAADAA0AAAAGAAAAAAAEAA0AAAAGAAAAAAAFAA0AAAAKAAAAAAAGAA0AAAACAAAAAAAHAA0AAAACAAAAAAAIAA0AAAAKAAAAAAAJAA0AAAAFAAAAAAAKAA0AAAABAAAAAAALAA0AAAAFAAAAAAAMAA0AAAAKAAAAAAANAA0AAAAKAAAAAAAOAA0AAAACAAAAAAAPAA0AAAAGAAAAAAAQAA0AAAAKAAAAAAARAA0AAAAGAAAAAAASAA0AAAAGAAAAAAATAA0AAAAGAAAAAAAUAA0AAAAGAAAAAAAVAA0AAAAFAAAAAAAWAA0AAAAJAAAAAAAXAA0AAAACAAAAAAAYAA0AAAAGAAAAAAAZAA0AAAAKAAAAAAA=")
+tile_set = ExtResource("11_e08e2")
+
+[node name="OtherLayers" type="TileMapLayer" parent="Level/Tilemap"]
+tile_set = ExtResource("11_e08e2")
+
+[node name="WaveManager" type="Node" parent="Level" node_paths=PackedStringArray("path_spawner")]
+unique_name_in_owner = true
+script = ExtResource("12_neg2b")
+all_enemies = Array[ExtResource("16_k2e45")]([ExtResource("15_jwpg7"), ExtResource("17_536cc"), ExtResource("18_aqgau"), ExtResource("19_8cuat"), ExtResource("20_o1aky"), ExtResource("21_kwxat"), ExtResource("31_kltya")])
+spawn_wave = true
+path_spawner = NodePath("../PathSpawner")
+
+[connection signal="pressed" from="CanvasLayer/UI/ReadyButton" to="Level/WaveManager" method="_on_ready_button_pressed"]

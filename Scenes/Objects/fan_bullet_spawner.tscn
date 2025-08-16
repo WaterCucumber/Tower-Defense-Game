@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcfn0q87iwh0"]
+
+[ext_resource type="Script" uid="uid://twl7yqeqmlo5" path="res://Scripts/Objects/Turret/fan_bullet_spawner.gd" id="1_ibima"]
+
+[node name="FanBulletSpawner" type="Node2D"]
+script = ExtResource("1_ibima")

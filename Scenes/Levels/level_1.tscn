@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://boiagighuxjv5"]
+
+[sub_resource type="Curve2D" id="Curve2D_gn5x3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -235, -89, 0, 0, 0, 0, -57, -87, 0, 0, 0, 0, -56, -41, 0, 0, 0, 0, 56, -40, 0, 0, 0, 0, 56, 24, 0, 0, 0, 0, -105, 23, 0, 0, 0, 0, -104, -40, 0, 0, 0, 0, -168, -41, 0, 0, 0, 0, -168, 87, 0, 0, 0, 0, 260, 88)
+}
+point_count = 10
+
+[node name="Level1" type="Path2D"]
+curve = SubResource("Curve2D_gn5x3")

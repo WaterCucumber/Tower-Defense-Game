@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectVisualisation" load_steps=3 format=3 uid="uid://kl5odghf50qc"]
+
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="1_dtkfi"]
+[ext_resource type="Texture2D" uid="uid://cqmxld0pi425b" path="res://Assets/Sprites/UI/Delayed.png" id="2_mtf2p"]
+
+[resource]
+script = ExtResource("1_dtkfi")
+name = "Delayed Effect"
+texture = ExtResource("2_mtf2p")
+metadata/_custom_type_script = "uid://b4hety026cymu"

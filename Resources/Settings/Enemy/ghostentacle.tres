@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=30 format=3 uid="uid://b7lluajc1fpw3"]
+
+[ext_resource type="Resource" uid="uid://r6qt45unk4o2" path="res://Resources/Settings/Enemy/Animations/ghostentacle_death.tres" id="1_f28h5"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="1_u0gaj"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_ssgn0"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="6_w7gjl"]
+[ext_resource type="Script" uid="uid://bwij1k6ppyjap" path="res://Scripts/Resources/Health/resistance_health_effect.gd" id="7_mmq81"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="7_rwsct"]
+[ext_resource type="Resource" uid="uid://dc6j82dmxwuur" path="res://Resources/Settings/Enemy/Animations/ghostentacle_movement.tres" id="7_uyij8"]
+[ext_resource type="Resource" uid="uid://bn007qtp7d2vv" path="res://Resources/Settings/Effects/resistance.tres" id="8_ssgn0"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="10_ip67k"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="10_uyij8"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="11_1s0fl"]
+[ext_resource type="Script" uid="uid://mwp4yq1wdf4f" path="res://Scripts/Resources/Effect Ignores/resistance_effect_ignore.gd" id="12_m63ic"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="13_1224m"]
+[ext_resource type="Script" uid="uid://b3ts7sbiv4qnx" path="res://Scripts/Resources/Effects/damage_over_time_effect.gd" id="14_hf7b5"]
+[ext_resource type="Resource" uid="uid://c5ii0shhcni8t" path="res://Resources/Settings/Effects/regeneration.tres" id="15_rwc43"]
+[ext_resource type="Script" uid="uid://r4wejoe2bmt5" path="res://Scripts/Resources/Effects/delayed_effect.gd" id="16_ybvcl"]
+[ext_resource type="Resource" uid="uid://kl5odghf50qc" path="res://Resources/Settings/Effects/delayed.tres" id="17_01mbo"]
+
+[sub_resource type="Resource" id="Resource_1s0fl"]
+script = ExtResource("7_mmq81")
+resistance_pct = 0.2
+can_be_less_than_zero = false
+visual = ExtResource("8_ssgn0")
+metadata/_custom_type_script = "uid://bwij1k6ppyjap"
+
+[sub_resource type="Resource" id="Resource_mmq81"]
+script = ExtResource("6_ssgn0")
+count = 15.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ssgn0"]
+script = ExtResource("7_rwsct")
+start_health = SubResource("Resource_mmq81")
+health_effects = Array[ExtResource("6_w7gjl")]([SubResource("Resource_1s0fl")])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_82uwg"]
+script = ExtResource("6_ssgn0")
+count = 0.8
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_w7gjl"]
+script = ExtResource("6_ssgn0")
+count = 0.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_rwsct"]
+script = ExtResource("10_ip67k")
+min_count_koef = 1.0
+min_count = SubResource("Resource_w7gjl")
+max_count_koef = 1.0
+max_count = SubResource("Resource_82uwg")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_m63ic"]
+script = ExtResource("6_ssgn0")
+count = 80.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_0orvl"]
+script = ExtResource("6_ssgn0")
+count = -1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ww8yo"]
+script = ExtResource("12_m63ic")
+ignore_part = 1.0
+can_be_less_than_zero = false
+metadata/_custom_type_script = "uid://mwp4yq1wdf4f"
+
+[sub_resource type="Resource" id="Resource_x6nj5"]
+script = ExtResource("13_1224m")
+count = SubResource("Resource_0orvl")
+ignores = Array[ExtResource("11_1s0fl")]([SubResource("Resource_ww8yo")])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[sub_resource type="Resource" id="Resource_y42fw"]
+script = ExtResource("14_hf7b5")
+damage = SubResource("Resource_x6nj5")
+max_stack_count = 1
+infinite_stack_count = false
+duration = 1.0
+is_infinite = false
+visual = ExtResource("15_rwc43")
+metadata/_custom_type_script = "uid://b3ts7sbiv4qnx"
+
+[sub_resource type="Resource" id="Resource_qhjs2"]
+script = ExtResource("16_ybvcl")
+main_effect = SubResource("Resource_y42fw")
+delay = 2.0
+loop = true
+apply_on_start = false
+visual = ExtResource("17_01mbo")
+metadata/_custom_type_script = "uid://r4wejoe2bmt5"
+
+[resource]
+script = ExtResource("1_u0gaj")
+health = SubResource("Resource_ssgn0")
+start_effects = Array[ExtResource("10_uyij8")]([SubResource("Resource_qhjs2")])
+speed = SubResource("Resource_m63ic")
+reward = SubResource("Resource_rwsct")
+modification = 0
+name = "Ghostentacle"
+movement_anim = ExtResource("7_uyij8")
+death_anim = ExtResource("1_f28h5")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

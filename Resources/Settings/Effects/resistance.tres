@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectVisualisation" load_steps=3 format=3 uid="uid://bn007qtp7d2vv"]
+
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="1_vpghq"]
+[ext_resource type="Texture2D" uid="uid://qnwkb4vcs1ih" path="res://Assets/Sprites/UI/Resistance.png" id="2_h0vrs"]
+
+[resource]
+script = ExtResource("1_vpghq")
+name = "Resistance"
+texture = ExtResource("2_h0vrs")
+metadata/_custom_type_script = "uid://b4hety026cymu"

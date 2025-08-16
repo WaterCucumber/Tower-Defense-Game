@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="ShopTowerSettings" load_steps=22 format=3 uid="uid://c1jvifk754tws"]
+
+[ext_resource type="Script" uid="uid://by7w26q306o6w" path="res://Scripts/Objects/Turret/Settings/shop_tower_settings.gd" id="1_6m6e1"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="2_4yli2"]
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="2_jhh0t"]
+[ext_resource type="Resource" uid="uid://cx0i12wu50d3b" path="res://Resources/Settings/Bullets/archer_bullet.tres" id="3_ejytf"]
+[ext_resource type="Texture2D" uid="uid://c11pxuk7ug4jv" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_0.png" id="3_kaidn"]
+[ext_resource type="Texture2D" uid="uid://dchn72t2klpx7" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_1.png" id="4_673g6"]
+[ext_resource type="Script" uid="uid://dep10uut4gn6v" path="res://Scripts/Objects/Turret/Settings/ranged_tower_settings.gd" id="4_o2qo0"]
+[ext_resource type="Texture2D" uid="uid://d330utdhjetxx" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_2.png" id="5_103o7"]
+[ext_resource type="Texture2D" uid="uid://di4cdyltr1gt3" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_3.png" id="6_4d0nj"]
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="6_n5133"]
+[ext_resource type="Texture2D" uid="uid://c4oa1k5wyll4v" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_4.png" id="7_o3i6m"]
+[ext_resource type="Texture2D" uid="uid://bdjnkm03otjb6" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level0/Archer_5.png" id="8_vqipb"]
+[ext_resource type="Resource" uid="uid://gu5ehyjmegcj" path="res://Resources/Settings/Towers Upgrades/Archer/upgrade_1_0.tres" id="13_jhh0t"]
+[ext_resource type="Resource" uid="uid://b0nyg7qt8mv1k" path="res://Resources/Settings/Towers Upgrades/Archer/upgrade_1_1.tres" id="14_n1rq5"]
+
+[sub_resource type="Resource" id="Resource_103o7"]
+script = ExtResource("2_jhh0t")
+textures = Array[Texture2D]([ExtResource("3_kaidn"), ExtResource("4_673g6"), ExtResource("5_103o7"), ExtResource("6_4d0nj"), ExtResource("7_o3i6m")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_mgntv"]
+script = ExtResource("2_4yli2")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_i5j1b"]
+script = ExtResource("2_4yli2")
+count = 0.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_7r44e"]
+script = ExtResource("2_jhh0t")
+textures = Array[Texture2D]([ExtResource("8_vqipb")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_5l7nc"]
+script = ExtResource("2_4yli2")
+count = 10.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_wn1l2"]
+script = ExtResource("2_4yli2")
+count = 30.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_a5mcb"]
+script = ExtResource("4_o2qo0")
+spread = SubResource("Resource_wn1l2")
+bullet_count = SubResource("Resource_mgntv")
+bullet_settings = ExtResource("3_ejytf")
+use_custom_tower_scene = false
+radius = SubResource("Resource_5l7nc")
+cooldown = SubResource("Resource_i5j1b")
+offset_type = 3
+debug_target_pos = false
+attack_anim = SubResource("Resource_103o7")
+post_attack_anim = SubResource("Resource_7r44e")
+weapon_size = Vector2(1, 1)
+metadata/_custom_type_script = "uid://dep10uut4gn6v"
+
+[resource]
+script = ExtResource("1_6m6e1")
+tower_texture = ExtResource("3_kaidn")
+tower_name = "Archer"
+tower_cost = 2.5
+tower_sell_pct = 0.95
+place_tiles = Array[int]([1])
+tower_settings = SubResource("Resource_a5mcb")
+tower_upgrades = Array[ExtResource("6_n5133")]([ExtResource("13_jhh0t"), ExtResource("14_n1rq5")])
+metadata/_custom_type_script = "uid://by7w26q306o6w"

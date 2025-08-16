@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=12 format=3 uid="uid://djeuulk1sejl7"]
+
+[ext_resource type="Resource" uid="uid://bgj1vhxl0iqdl" path="res://Resources/Settings/Enemy/Animations/ghost_death.tres" id="1_7ktba"]
+[ext_resource type="Resource" uid="uid://dv4jjq1j0sjae" path="res://Resources/Settings/Enemy/Animations/ghost_movement.tres" id="5_q8ppe"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_6sruc"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="6_uf4h4"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="7_7wyot"]
+[ext_resource type="Resource" uid="uid://dqfpqh0vvddnd" path="res://Resources/Settings/Enemy/new_resource.tres" id="7_p4rpv"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="7_q8ppe"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="10_skr1u"]
+
+[sub_resource type="Resource" id="Resource_uf4h4"]
+script = ExtResource("6_6sruc")
+count = 10.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_6sruc"]
+script = ExtResource("7_7wyot")
+start_health = SubResource("Resource_uf4h4")
+health_effects = Array[ExtResource("6_uf4h4")]([])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_q8ppe"]
+script = ExtResource("6_6sruc")
+count = 0.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[resource]
+script = ExtResource("10_skr1u")
+health = SubResource("Resource_6sruc")
+start_effects = Array[ExtResource("7_q8ppe")]([])
+speed = ExtResource("7_p4rpv")
+reward = SubResource("Resource_q8ppe")
+modification = 0
+name = "Ghost"
+movement_anim = ExtResource("5_q8ppe")
+death_anim = ExtResource("1_7ktba")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

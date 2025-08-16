@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy5o3weqpkrwv"]
+
+[ext_resource type="Script" uid="uid://d2lxolrqx0jmw" path="res://Scripts/UI/tooltip.gd" id="1_twg4b"]
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="2_346dn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twg4b"]
+bg_color = Color(0.241156, 0.241156, 0.241156, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="Tooltip" type="PanelContainer"]
+top_level = true
+offset_right = 376.0
+offset_bottom = 20.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twg4b")
+script = ExtResource("1_twg4b")
+
+[node name="TooltipText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_346dn")
+bbcode_enabled = true
+text = "[img]res://Assets/Sprites/UI/Damage Icon.png[/img] Damage: 1 - 2>>-5 - 30sadjhk
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false

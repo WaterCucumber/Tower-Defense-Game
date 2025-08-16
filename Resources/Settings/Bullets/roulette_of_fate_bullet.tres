@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="BulletSettings" load_steps=16 format=3 uid="uid://bk1kch6j2oki4"]
+
+[ext_resource type="Texture2D" uid="uid://cie637deqpktb" path="res://Assets/Sprites/Bullet.png" id="1_1do4i"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="2_nq3uu"]
+[ext_resource type="Script" uid="uid://d1nhqbcs7xb7h" path="res://Scripts/Objects/Bullet/Settings/bullet_speed_settings.gd" id="3_vnscg"]
+[ext_resource type="Script" uid="uid://0cp1l83wgfxh" path="res://Scripts/Objects/Bullet/Settings/bullet_trajectory_settings.gd" id="4_t0nj5"]
+[ext_resource type="Script" uid="uid://dhwribshm3lf7" path="res://Scripts/Objects/Bullet/Settings/bullet_settings.gd" id="5_sd254"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="5_t0nj5"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="6_sd254"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="7_8o43e"]
+
+[sub_resource type="Resource" id="Resource_yv3i2"]
+script = ExtResource("2_nq3uu")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_s0bv0"]
+script = ExtResource("3_vnscg")
+base_speed = 1000.0
+metadata/_custom_type_script = "uid://d1nhqbcs7xb7h"
+
+[sub_resource type="Resource" id="Resource_tvt3n"]
+script = ExtResource("4_t0nj5")
+offset_type = 1
+metadata/_custom_type_script = "uid://0cp1l83wgfxh"
+
+[sub_resource type="Resource" id="Resource_ea42r"]
+script = ExtResource("2_nq3uu")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_chul7"]
+script = ExtResource("2_nq3uu")
+count = 0.1
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_2jfsu"]
+script = ExtResource("5_t0nj5")
+min_count_koef = 1.0
+min_count = SubResource("Resource_chul7")
+max_count_koef = 1.0
+max_count = SubResource("Resource_ea42r")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_t70m4"]
+script = ExtResource("7_8o43e")
+count = SubResource("Resource_2jfsu")
+ignores = Array[ExtResource("6_sd254")]([])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[resource]
+script = ExtResource("5_sd254")
+max_bounce = 0
+damage = SubResource("Resource_t70m4")
+lifetime = 5.0
+pierce = 1
+bullet_speed = SubResource("Resource_s0bv0")
+bullet_trajectory_settings = SubResource("Resource_tvt3n")
+bullet_collision_mask = 1
+bullet_animation = Array[Texture2D]([ExtResource("1_1do4i")])
+bullet_scale = SubResource("Resource_yv3i2")
+hitbox_size = Vector2(0, 0)
+sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://dhwribshm3lf7"

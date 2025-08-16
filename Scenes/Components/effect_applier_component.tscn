@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq38bmqu1xgrm"]
+
+[ext_resource type="Script" uid="uid://xwg6v7b3aluq" path="res://Scripts/Components/effect_applier_component.gd" id="1_50b8u"]
+
+[node name="EffectApplierComponent" type="Node2D"]
+script = ExtResource("1_50b8u")

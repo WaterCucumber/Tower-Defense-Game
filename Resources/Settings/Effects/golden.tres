@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectVisualisation" load_steps=3 format=3 uid="uid://y17l8lebjirv"]
+
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="1_fchsw"]
+[ext_resource type="Texture2D" uid="uid://ci81k3c5208vv" path="res://Assets/Sprites/UI/Coin.png" id="2_5ews5"]
+
+[resource]
+script = ExtResource("1_fchsw")
+name = "Golden"
+texture = ExtResource("2_5ews5")
+metadata/_custom_type_script = "uid://b4hety026cymu"

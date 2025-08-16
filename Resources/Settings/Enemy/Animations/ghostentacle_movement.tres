@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AnimationTextures" load_steps=5 format=3 uid="uid://dc6j82dmxwuur"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_2o5es"]
+[ext_resource type="Texture2D" uid="uid://c1dmdf2acu6to" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_0.png" id="2_bade6"]
+[ext_resource type="Texture2D" uid="uid://rspjebagu1qm" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_1.png" id="3_d7vyn"]
+[ext_resource type="Texture2D" uid="uid://2esl5hsoxipi" path="res://Assets/Sprites/Enemies/Ghostentacle/Basic/Enemy1_Move_2.png" id="4_62djw"]
+
+[resource]
+script = ExtResource("1_2o5es")
+textures = Array[Texture2D]([ExtResource("2_bade6"), ExtResource("3_d7vyn"), ExtResource("4_62djw")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"

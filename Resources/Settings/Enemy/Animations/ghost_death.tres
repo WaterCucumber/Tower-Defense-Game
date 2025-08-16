@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimationTextures" load_steps=7 format=3 uid="uid://bgj1vhxl0iqdl"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_sqmm5"]
+[ext_resource type="Texture2D" uid="uid://ckuq1i3cfnf16" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_4.png" id="2_kmh4t"]
+[ext_resource type="Texture2D" uid="uid://cfqgj235tw8f1" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_5.png" id="3_n6ueg"]
+[ext_resource type="Texture2D" uid="uid://cpyb6avlhvhcj" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_6.png" id="4_gwwtp"]
+[ext_resource type="Texture2D" uid="uid://dvsfmmngsop4f" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_7.png" id="5_4j4io"]
+[ext_resource type="Texture2D" uid="uid://dajt0tex47bmh" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_8.png" id="6_8vijs"]
+
+[resource]
+script = ExtResource("1_sqmm5")
+textures = Array[Texture2D]([ExtResource("2_kmh4t"), ExtResource("3_n6ueg"), ExtResource("4_gwwtp"), ExtResource("5_4j4io"), ExtResource("6_8vijs")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"

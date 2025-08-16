@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ShopTowerSettings" load_steps=12 format=3 uid="uid://yla8v648ykgr"]
+
+[ext_resource type="Script" uid="uid://by7w26q306o6w" path="res://Scripts/Objects/Turret/Settings/shop_tower_settings.gd" id="1_o3bp0"]
+[ext_resource type="Script" uid="uid://dep10uut4gn6v" path="res://Scripts/Objects/Turret/Settings/ranged_tower_settings.gd" id="1_v00rj"]
+[ext_resource type="Resource" uid="uid://0qfkpjg4nvho" path="res://Resources/Settings/Bullets/cannon_bullet.tres" id="2_8emsm"]
+[ext_resource type="Texture2D" uid="uid://dn765ch76py3q" path="res://Assets/Sprites/Turrets/Ranged/Cannon/Cannon_0.png" id="3_xixlh"]
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="6_7a830"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="8_b6o2n"]
+
+[sub_resource type="Resource" id="Resource_glfs7"]
+script = ExtResource("8_b6o2n")
+count = 3.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_bl776"]
+script = ExtResource("8_b6o2n")
+count = 1.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ee7vw"]
+script = ExtResource("8_b6o2n")
+count = 15.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_mwrx0"]
+script = ExtResource("8_b6o2n")
+count = 35.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_07gi4"]
+script = ExtResource("1_v00rj")
+spread = SubResource("Resource_mwrx0")
+bullet_count = SubResource("Resource_glfs7")
+bullet_settings = ExtResource("2_8emsm")
+use_custom_tower_scene = false
+radius = SubResource("Resource_ee7vw")
+cooldown = SubResource("Resource_bl776")
+offset_type = 3
+debug_target_pos = false
+weapon_size = Vector2(0.5, 0.5)
+metadata/_custom_type_script = "uid://dep10uut4gn6v"
+
+[resource]
+script = ExtResource("1_o3bp0")
+tower_texture = ExtResource("3_xixlh")
+tower_name = "Cannon"
+tower_cost = 5.0
+tower_sell_pct = 0.95
+place_tiles = Array[int]([3])
+tower_settings = SubResource("Resource_07gi4")
+tower_upgrades = Array[ExtResource("6_7a830")]([])
+metadata/_custom_type_script = "uid://by7w26q306o6w"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AnimationTextures" load_steps=10 format=3 uid="uid://dk45figh404ny"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_rionw"]
+[ext_resource type="Texture2D" uid="uid://2k6rjsyc163e" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_0.png" id="2_e0ug8"]
+[ext_resource type="Texture2D" uid="uid://dfbg40w7f8s3s" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_1.png" id="3_dvafm"]
+[ext_resource type="Texture2D" uid="uid://hysa1f5tvniq" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_2.png" id="4_tbdom"]
+[ext_resource type="Texture2D" uid="uid://ds3bv5r2l1r2q" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_3.png" id="5_8nyiw"]
+[ext_resource type="Texture2D" uid="uid://4att22xsmr76" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_4.png" id="6_ck1rs"]
+[ext_resource type="Texture2D" uid="uid://51bug68texf2" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_5.png" id="7_vno7c"]
+[ext_resource type="Texture2D" uid="uid://knsebijir4oe" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_6.png" id="8_melk6"]
+[ext_resource type="Texture2D" uid="uid://dmsbor0btnygf" path="res://Assets/Sprites/Enemies/Effects/Glitch/Glitch_Effect_7.png" id="9_ih0vi"]
+
+[resource]
+script = ExtResource("1_rionw")
+textures = Array[Texture2D]([ExtResource("2_e0ug8"), ExtResource("3_dvafm"), ExtResource("4_tbdom"), ExtResource("5_8nyiw"), ExtResource("6_ck1rs"), ExtResource("7_vno7c"), ExtResource("8_melk6"), ExtResource("9_ih0vi")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"

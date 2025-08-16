@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectVisualisation" load_steps=3 format=3 uid="uid://c5ii0shhcni8t"]
+
+[ext_resource type="Script" uid="uid://b4hety026cymu" path="res://Scripts/Resources/Effects/effect_visualisation.gd" id="1_45cbh"]
+[ext_resource type="Texture2D" uid="uid://cjt1l3n4osrye" path="res://Assets/Sprites/UI/Regeneration.png" id="2_45cbh"]
+
+[resource]
+script = ExtResource("1_45cbh")
+name = "Regeneration"
+texture = ExtResource("2_45cbh")
+metadata/_custom_type_script = "uid://b4hety026cymu"

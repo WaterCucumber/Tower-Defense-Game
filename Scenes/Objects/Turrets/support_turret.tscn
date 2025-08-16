@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0kynemvxtuw"]
+
+[ext_resource type="PackedScene" uid="uid://d3b34p4eomeq" path="res://Scenes/Objects/Turrets/ranged_turret.tscn" id="1_hvkwf"]
+[ext_resource type="Script" uid="uid://68gvrdyyulg7" path="res://Scripts/Objects/Turret/support_turret.gd" id="2_xdusp"]
+
+[node name="SupportTurret" instance=ExtResource("1_hvkwf")]
+script = ExtResource("2_xdusp")
+
+[node name="FOV Area" parent="." index="0"]
+collision_mask = 5

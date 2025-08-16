@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwdq5npnyo7hc"]
+
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="1_vvncj"]
+[ext_resource type="Script" uid="uid://bacccroto41" path="res://Scripts/UI/upgrade_button.gd" id="2_6a6lc"]
+[ext_resource type="PackedScene" uid="uid://cy5o3weqpkrwv" path="res://Scenes/UI/tooltip.tscn" id="3_0q5a0"]
+[ext_resource type="Texture2D" uid="uid://bdp51bqpm3m2b" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level1/Archer_l1_icon.png" id="4_6a6lc"]
+
+[node name="UpgradeButton" type="Button"]
+custom_minimum_size = Vector2(72, 72)
+theme = ExtResource("1_vvncj")
+script = ExtResource("2_6a6lc")
+
+[node name="Tooltip" parent="." instance=ExtResource("3_0q5a0")]
+layout_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6a6lc")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

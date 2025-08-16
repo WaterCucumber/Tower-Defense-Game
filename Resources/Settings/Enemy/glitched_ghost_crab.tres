@@ -1,0 +1,106 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=25 format=3 uid="uid://io30ir41s702"]
+
+[ext_resource type="Resource" uid="uid://dg4kb1a5btt8w" path="res://Resources/Settings/Enemy/Animations/ghost_crab_death.tres" id="1_6uuey"]
+[ext_resource type="Resource" uid="uid://dk45figh404ny" path="res://Resources/Settings/Enemy/Animations/glitch_effect.tres" id="2_xruap"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="6_ofg02"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_s7wor"]
+[ext_resource type="Script" uid="uid://kigup5634uin" path="res://Scripts/Resources/Health/armor_health_effect.gd" id="7_ds43k"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="7_g3pdo"]
+[ext_resource type="Resource" uid="uid://cysimr0b2gmdo" path="res://Resources/Settings/Effects/armor.tres" id="8_s7wor"]
+[ext_resource type="Resource" uid="uid://cwpdf5uxkm21g" path="res://Resources/Settings/Enemy/Animations/ghost_crab_movement.tres" id="9_ftkts"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="11_20ljn"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="11_xruap"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="12_rdcmj"]
+
+[sub_resource type="Resource" id="Resource_tab3b"]
+script = ExtResource("7_ds43k")
+armor = 1.0
+can_be_less_than_zero = false
+visual = ExtResource("8_s7wor")
+metadata/_custom_type_script = "uid://kigup5634uin"
+
+[sub_resource type="Resource" id="Resource_j0t4j"]
+script = ExtResource("6_s7wor")
+count = 50.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ug4n1"]
+script = ExtResource("6_s7wor")
+count = 30.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_20ljn"]
+script = ExtResource("11_20ljn")
+min_count_koef = 1.0
+min_count = SubResource("Resource_ug4n1")
+max_count_koef = 1.0
+max_count = SubResource("Resource_j0t4j")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_44t02"]
+script = ExtResource("7_g3pdo")
+start_health = SubResource("Resource_20ljn")
+health_effects = Array[ExtResource("6_ofg02")]([SubResource("Resource_tab3b")])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_fxdah"]
+script = ExtResource("6_s7wor")
+count = 2.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_bp80w"]
+script = ExtResource("6_s7wor")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_oqs83"]
+script = ExtResource("11_20ljn")
+min_count_koef = 1.0
+min_count = SubResource("Resource_bp80w")
+max_count_koef = 1.0
+max_count = SubResource("Resource_fxdah")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_mhyjy"]
+script = ExtResource("6_s7wor")
+count = 0.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_q1rki"]
+script = ExtResource("11_20ljn")
+min_count_koef = 1.0
+min_count = SubResource("Resource_mhyjy")
+max_count_koef = 1.0
+max_count = SubResource("Resource_oqs83")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_g3pdo"]
+script = ExtResource("6_s7wor")
+count = 175.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ds43k"]
+script = ExtResource("6_s7wor")
+count = 125.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_s7wor"]
+script = ExtResource("11_20ljn")
+min_count_koef = 1.0
+min_count = SubResource("Resource_ds43k")
+max_count_koef = 1.0
+max_count = SubResource("Resource_g3pdo")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[resource]
+script = ExtResource("12_rdcmj")
+health = SubResource("Resource_44t02")
+start_effects = Array[ExtResource("11_xruap")]([])
+speed = SubResource("Resource_s7wor")
+reward = SubResource("Resource_q1rki")
+modification = 1
+name = "Ghost Crab"
+movement_anim = ExtResource("9_ftkts")
+death_anim = ExtResource("1_6uuey")
+effect_anim = ExtResource("2_xruap")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://8lj8iqjncp2t"]
+
+[ext_resource type="FontFile" uid="uid://cu7thshcvh4yw" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_rpoj5"]
+[ext_resource type="FontFile" uid="uid://bbmhdtqyg8jwc" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="2_7ygoy"]
+
+[resource]
+Button/fonts/font = ExtResource("1_rpoj5")
+Label/fonts/font = ExtResource("1_rpoj5")
+RichTextLabel/fonts/bold_font = ExtResource("2_7ygoy")
+RichTextLabel/fonts/normal_font = ExtResource("1_rpoj5")

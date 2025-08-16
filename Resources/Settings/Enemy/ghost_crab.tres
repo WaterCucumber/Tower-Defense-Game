@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=12 format=3 uid="uid://chhx8ivdp8age"]
+
+[ext_resource type="Resource" uid="uid://dg4kb1a5btt8w" path="res://Resources/Settings/Enemy/Animations/ghost_crab_death.tres" id="1_ulbh6"]
+[ext_resource type="Resource" uid="uid://cwpdf5uxkm21g" path="res://Resources/Settings/Enemy/Animations/ghost_crab_movement.tres" id="5_sn0a5"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="6_krpuu"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_w4ny6"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="7_npfeu"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="7_sn0a5"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="10_w5jxn"]
+
+[sub_resource type="Resource" id="Resource_krpuu"]
+script = ExtResource("6_w4ny6")
+count = 5.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_j0gio"]
+script = ExtResource("7_npfeu")
+start_health = SubResource("Resource_krpuu")
+health_effects = Array[ExtResource("6_krpuu")]([])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_s21cp"]
+script = ExtResource("6_w4ny6")
+count = 0.5
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_hf7b5"]
+script = ExtResource("6_w4ny6")
+count = 200.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[resource]
+script = ExtResource("10_w5jxn")
+health = SubResource("Resource_j0gio")
+start_effects = Array[ExtResource("7_sn0a5")]([])
+speed = SubResource("Resource_hf7b5")
+reward = SubResource("Resource_s21cp")
+modification = 0
+name = "Ghost Crab"
+movement_anim = ExtResource("5_sn0a5")
+death_anim = ExtResource("1_ulbh6")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

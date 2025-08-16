@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://c65smd8bhfkf2"]
+
+[ext_resource type="Script" uid="uid://dfg6n67k78m4i" path="res://Scripts/Objects/Bullet/Settings/bullet.gd" id="1_xfiki"]
+[ext_resource type="PackedScene" uid="uid://pudj2u1if1sp" path="res://Scenes/Components/hitbox_component.tscn" id="2_xfiki"]
+[ext_resource type="PackedScene" uid="uid://cl4bimwa1v6wm" path="res://Scenes/Components/attack_component.tscn" id="3_xqv3d"]
+[ext_resource type="Script" uid="uid://cgupj3k343e76" path="res://Scripts/Resources/Count/count_base.gd" id="4_xfiki"]
+[ext_resource type="PackedScene" uid="uid://bq38bmqu1xgrm" path="res://Scenes/Components/effect_applier_component.tscn" id="5_xqv3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhyrb"]
+size = Vector2(16, 8)
+
+[sub_resource type="Resource" id="Resource_xqv3d"]
+script = ExtResource("4_xfiki")
+metadata/_custom_type_script = "uid://cgupj3k343e76"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_di161"]
+
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xfiki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uhyrb")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("attack_component", "effect_applier_component") instance=ExtResource("2_xfiki")]
+attack_component = NodePath("../AttackComponent")
+effect_applier_component = NodePath("../EffectApplierComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_uhyrb")
+
+[node name="AttackComponent" parent="." instance=ExtResource("3_xqv3d")]
+damage = SubResource("Resource_xqv3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_di161")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2.38419e-07, 5.96046e-08)
+scale = Vector2(0.4, 0.4)
+
+[node name="EffectApplierComponent" parent="." instance=ExtResource("5_xqv3d")]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

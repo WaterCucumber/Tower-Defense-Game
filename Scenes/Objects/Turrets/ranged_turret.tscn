@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3b34p4eomeq"]
+
+[ext_resource type="PackedScene" uid="uid://dtdvoeqg2emos" path="res://Scenes/Objects/turret.tscn" id="1_ttqrn"]
+[ext_resource type="Script" uid="uid://wdlhljhtkx22" path="res://Scripts/Objects/Turret/ranged_turret.gd" id="2_myo8w"]
+[ext_resource type="PackedScene" uid="uid://bcfn0q87iwh0" path="res://Scenes/Objects/fan_bullet_spawner.tscn" id="2_spbeq"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="3_myo8w"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="4_gq62t"]
+[ext_resource type="Resource" uid="uid://cx0i12wu50d3b" path="res://Resources/Settings/Bullets/archer_bullet.tres" id="5_p4pum"]
+
+[sub_resource type="Resource" id="Resource_myo8w"]
+script = ExtResource("3_myo8w")
+count = 15.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_a5aox"]
+script = ExtResource("3_myo8w")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_qfvgk"]
+script = ExtResource("3_myo8w")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_yhsyv"]
+script = ExtResource("4_gq62t")
+min_count_koef = 1.0
+min_count = SubResource("Resource_qfvgk")
+max_count_koef = 1.0
+max_count = SubResource("Resource_a5aox")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_kn40n"]
+script = ExtResource("3_myo8w")
+count = 0.2
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[node name="RangedTurret" instance=ExtResource("1_ttqrn")]
+script = ExtResource("2_myo8w")
+
+[node name="FanBulletSpawner" parent="." index="3" instance=ExtResource("2_spbeq")]
+spread = SubResource("Resource_myo8w")
+count = SubResource("Resource_yhsyv")
+bullet_settings = ExtResource("5_p4pum")
+spawn_interval = SubResource("Resource_kn40n")

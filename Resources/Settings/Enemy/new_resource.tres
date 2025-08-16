@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Count" load_steps=2 format=3 uid="uid://dqfpqh0vvddnd"]
+
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="1_amhar"]
+
+[resource]
+script = ExtResource("1_amhar")
+count = 100.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"

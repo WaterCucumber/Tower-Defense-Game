@@ -1,0 +1,138 @@
+[gd_resource type="Resource" script_class="EnemySettings" load_steps=34 format=3 uid="uid://b77007db14guw"]
+
+[ext_resource type="Resource" uid="uid://bgj1vhxl0iqdl" path="res://Resources/Settings/Enemy/Animations/ghost_death.tres" id="1_bfbty"]
+[ext_resource type="Resource" uid="uid://dk45figh404ny" path="res://Resources/Settings/Enemy/Animations/glitch_effect.tres" id="2_br645"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="6_bp80w"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="6_mhyjy"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="7_oqs83"]
+[ext_resource type="Script" uid="uid://kigup5634uin" path="res://Scripts/Resources/Health/armor_health_effect.gd" id="7_q1rki"]
+[ext_resource type="Resource" uid="uid://cysimr0b2gmdo" path="res://Resources/Settings/Effects/armor.tres" id="8_vhifx"]
+[ext_resource type="Resource" uid="uid://dv4jjq1j0sjae" path="res://Resources/Settings/Enemy/Animations/ghost_movement.tres" id="9_dr8ut"]
+[ext_resource type="Script" uid="uid://05l8s5mj0jsn" path="res://Scripts/Objects/Enemy/Settings/enemy_settings.gd" id="11_cf6o6"]
+[ext_resource type="Script" uid="uid://bykmj5vmkpeju" path="res://Scripts/Resources/Count/random_count.gd" id="11_dr8ut"]
+[ext_resource type="Script" uid="uid://njod2xp0m6y4" path="res://Scripts/Resources/Effects/effect.gd" id="11_fxdah"]
+[ext_resource type="Script" uid="uid://b3ts7sbiv4qnx" path="res://Scripts/Resources/Effects/damage_over_time_effect.gd" id="12_bp80w"]
+[ext_resource type="Script" uid="uid://dm1f340t3xinl" path="res://Scripts/Resources/Effect Ignores/effect_ignore_base.gd" id="12_mhyjy"]
+[ext_resource type="Resource" uid="uid://c5ii0shhcni8t" path="res://Resources/Settings/Effects/regeneration.tres" id="13_oqs83"]
+[ext_resource type="Script" uid="uid://chmuhbcl5s8i" path="res://Scripts/Resources/Effect Ignores/armor_effect_ignore.gd" id="13_q1rki"]
+[ext_resource type="Script" uid="uid://brs7hh336oxif" path="res://Scripts/Resources/Damage/base_damage.gd" id="14_vhifx"]
+
+[sub_resource type="Resource" id="Resource_ncbfb"]
+script = ExtResource("7_q1rki")
+armor = 1.0
+can_be_less_than_zero = false
+visual = ExtResource("8_vhifx")
+metadata/_custom_type_script = "uid://kigup5634uin"
+
+[sub_resource type="Resource" id="Resource_0cqau"]
+script = ExtResource("6_mhyjy")
+count = 50.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_ma3i4"]
+script = ExtResource("6_mhyjy")
+count = 25.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_2md7a"]
+script = ExtResource("11_dr8ut")
+min_count_koef = 1.0
+min_count = SubResource("Resource_ma3i4")
+max_count_koef = 1.0
+max_count = SubResource("Resource_0cqau")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_vhifx"]
+script = ExtResource("7_oqs83")
+start_health = SubResource("Resource_2md7a")
+health_effects = Array[ExtResource("6_bp80w")]([SubResource("Resource_ncbfb")])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="Resource" id="Resource_fxdah"]
+script = ExtResource("6_mhyjy")
+count = 2.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_bp80w"]
+script = ExtResource("6_mhyjy")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_oqs83"]
+script = ExtResource("11_dr8ut")
+min_count_koef = 1.0
+min_count = SubResource("Resource_bp80w")
+max_count_koef = 1.0
+max_count = SubResource("Resource_fxdah")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_mhyjy"]
+script = ExtResource("6_mhyjy")
+count = 0.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_q1rki"]
+script = ExtResource("11_dr8ut")
+min_count_koef = 1.0
+min_count = SubResource("Resource_mhyjy")
+max_count_koef = 1.0
+max_count = SubResource("Resource_oqs83")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_xr4pr"]
+script = ExtResource("6_mhyjy")
+count = 125.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_cf6o6"]
+script = ExtResource("6_mhyjy")
+count = 75.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_cb2i5"]
+script = ExtResource("11_dr8ut")
+min_count_koef = 1.0
+min_count = SubResource("Resource_cf6o6")
+max_count_koef = 1.0
+max_count = SubResource("Resource_xr4pr")
+metadata/_custom_type_script = "uid://bykmj5vmkpeju"
+
+[sub_resource type="Resource" id="Resource_cmtpo"]
+script = ExtResource("6_mhyjy")
+count = -25.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_fnagp"]
+script = ExtResource("13_q1rki")
+ignore_value = 1.0
+can_be_less_than_zero = false
+metadata/_custom_type_script = "uid://chmuhbcl5s8i"
+
+[sub_resource type="Resource" id="Resource_ly3ew"]
+script = ExtResource("14_vhifx")
+count = SubResource("Resource_cmtpo")
+ignores = Array[ExtResource("12_mhyjy")]([SubResource("Resource_fnagp")])
+metadata/_custom_type_script = "uid://brs7hh336oxif"
+
+[sub_resource type="Resource" id="Resource_peqgb"]
+script = ExtResource("12_bp80w")
+damage = SubResource("Resource_ly3ew")
+max_stack_count = 1
+infinite_stack_count = null
+duration = 2.0
+is_infinite = null
+visual = ExtResource("13_oqs83")
+metadata/_custom_type_script = "uid://b3ts7sbiv4qnx"
+
+[resource]
+script = ExtResource("11_cf6o6")
+health = SubResource("Resource_vhifx")
+start_effects = Array[ExtResource("11_fxdah")]([SubResource("Resource_peqgb")])
+speed = SubResource("Resource_cb2i5")
+reward = SubResource("Resource_q1rki")
+modification = 1
+name = "Ghost"
+movement_anim = ExtResource("9_dr8ut")
+death_anim = ExtResource("1_bfbty")
+effect_anim = ExtResource("2_br645")
+metadata/_custom_type_script = "uid://05l8s5mj0jsn"

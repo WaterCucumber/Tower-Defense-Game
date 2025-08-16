@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="RangedTowerUpgradeData" load_steps=24 format=3 uid="uid://orjixq8w2psc"]
+
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="1_pffwk"]
+[ext_resource type="Resource" uid="uid://lpg1jcuest2p" path="res://Resources/Settings/Towers Upgrades/Archer/upgrade_3_1.tres" id="2_pffwk"]
+[ext_resource type="Script" uid="uid://dt3t8wrjykoc7" path="res://Scripts/Resources/Turret Upgrade Strategy/ranged_tower_upgrade_data.gd" id="3_tfaxt"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="4_m6cn3"]
+[ext_resource type="Texture2D" uid="uid://b68nk5vcu1u0j" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_icon.png" id="5_e6ocn"]
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="6_otlnh"]
+[ext_resource type="Texture2D" uid="uid://cxlsyuba4aror" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_0.png" id="7_gxdsi"]
+[ext_resource type="Texture2D" uid="uid://dsyq0v5ygwqhe" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_1.png" id="8_40ifw"]
+[ext_resource type="Texture2D" uid="uid://bleadejc06ki3" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_2.png" id="9_iussj"]
+[ext_resource type="Texture2D" uid="uid://behn2lx5kyrfe" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_3.png" id="10_5ko33"]
+[ext_resource type="Texture2D" uid="uid://bhgrv8cp5he8u" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_4.png" id="11_mlamq"]
+[ext_resource type="Texture2D" uid="uid://bjdjqoewk301b" path="res://Assets/Sprites/Turrets/Ranged/Archer/Basic/Level2/Archer_l2_5.png" id="12_e7ugn"]
+[ext_resource type="Script" uid="uid://cwmyq8u3ql6km" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/tower_upgrade_strategy_base.gd" id="13_gapov"]
+[ext_resource type="Script" uid="uid://cg0glto8l22uc" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/damage_upgrade_strategy.gd" id="14_iakkn"]
+[ext_resource type="Script" uid="uid://dkrofpfeloef4" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/cooldown_upgrade_strategy.gd" id="15_stwjq"]
+[ext_resource type="Script" uid="uid://6g2sql44h0ek" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/radius_upgrade_strategy.gd" id="16_gsy2d"]
+[ext_resource type="Script" uid="uid://yb1a0p1ag1cd" path="res://Scripts/Resources/Turret Upgrade Strategy/Strategies/bullet_count_upgrade_strategy.gd" id="17_r5tlw"]
+
+[sub_resource type="Resource" id="Resource_l3h8i"]
+script = ExtResource("4_m6cn3")
+count = 2.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_f0mag"]
+script = ExtResource("6_otlnh")
+textures = Array[Texture2D]([ExtResource("12_e7ugn"), ExtResource("7_gxdsi"), ExtResource("8_40ifw"), ExtResource("9_iussj"), ExtResource("10_5ko33"), ExtResource("11_mlamq")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"
+
+[sub_resource type="Resource" id="Resource_tytwa"]
+script = ExtResource("14_iakkn")
+add_v = 1.0
+mult_v = 2.0
+metadata/_custom_type_script = "uid://cg0glto8l22uc"
+
+[sub_resource type="Resource" id="Resource_nyj2l"]
+script = ExtResource("15_stwjq")
+add_v = 1.0
+mult_v = 1.0
+metadata/_custom_type_script = "uid://dkrofpfeloef4"
+
+[sub_resource type="Resource" id="Resource_60tj6"]
+script = ExtResource("16_gsy2d")
+add_v = 1.0
+mult_v = 1.0
+metadata/_custom_type_script = "uid://6g2sql44h0ek"
+
+[sub_resource type="Resource" id="Resource_nn5ys"]
+script = ExtResource("17_r5tlw")
+add_v = 2.0
+mult_v = 1.0
+metadata/_custom_type_script = "uid://yb1a0p1ag1cd"
+
+[resource]
+script = ExtResource("3_tfaxt")
+upgraded_tower_attack = SubResource("Resource_f0mag")
+upgrade_name = "Multishot"
+upgrade_description = "[color=cyan][b][Abillity][/b] +2 Bullets per shot[/color]"
+upgrade_image = ExtResource("5_e6ocn")
+upgrade_cost = SubResource("Resource_l3h8i")
+upgrades = Array[ExtResource("13_gapov")]([SubResource("Resource_tytwa"), SubResource("Resource_nyj2l"), SubResource("Resource_60tj6"), SubResource("Resource_nn5ys")])
+next_upgrades = Array[ExtResource("1_pffwk")]([ExtResource("2_pffwk")])
+metadata/_custom_type_script = "uid://dt3t8wrjykoc7"

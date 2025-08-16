@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AnimationTextures" load_steps=7 format=3 uid="uid://dg4kb1a5btt8w"]
+
+[ext_resource type="Script" uid="uid://bb36n7cegsvqp" path="res://Scripts/Resources/animation_textures.gd" id="1_eipu8"]
+[ext_resource type="Texture2D" uid="uid://cmgn4raik1tfw" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_3.png" id="2_nb48r"]
+[ext_resource type="Texture2D" uid="uid://bk4vjiwqyhurf" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_4.png" id="3_lcl5a"]
+[ext_resource type="Texture2D" uid="uid://dgt4b36hj6mx1" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_5.png" id="4_crcw4"]
+[ext_resource type="Texture2D" uid="uid://b1lfh1lrspk2i" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_6.png" id="5_cfcwj"]
+[ext_resource type="Texture2D" uid="uid://bkvwim06ouifr" path="res://Assets/Sprites/Enemies/Ghost Crab/Basic/Enemy2_Death_7.png" id="6_fc3au"]
+
+[resource]
+script = ExtResource("1_eipu8")
+textures = Array[Texture2D]([ExtResource("2_nb48r"), ExtResource("3_lcl5a"), ExtResource("4_crcw4"), ExtResource("5_cfcwj"), ExtResource("6_fc3au")])
+metadata/_custom_type_script = "uid://bb36n7cegsvqp"

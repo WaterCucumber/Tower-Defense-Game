@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=3 uid="uid://bl4lrpnv2adyo"]
+
+[ext_resource type="Script" uid="uid://bhg8yuixbyo6b" path="res://Scripts/Objects/Enemy/Base/enemy.gd" id="1_7sqod"]
+[ext_resource type="Texture2D" uid="uid://ckuq1i3cfnf16" path="res://Assets/Sprites/Enemies/Ghost/Basic/Ghost_Death_4.png" id="2_e66tk"]
+[ext_resource type="Script" uid="uid://d1isqckqtc6gs" path="res://Scripts/Resources/Health/base_health_effect.gd" id="4_v5mj1"]
+[ext_resource type="Script" uid="uid://wk8i5c2lff8a" path="res://Scripts/Resources/Health/base_health.gd" id="5_xxkv6"]
+[ext_resource type="Script" uid="uid://cgupj3k343e76" path="res://Scripts/Resources/Count/count_base.gd" id="6_7sqod"]
+[ext_resource type="PackedScene" uid="uid://1wsrb4o3w5s" path="res://Scenes/Components/health_component.tscn" id="9_6cxka"]
+[ext_resource type="PackedScene" uid="uid://bhhoqygupctie" path="res://Scenes/Components/hurtbox_component.tscn" id="10_6ucen"]
+[ext_resource type="Script" uid="uid://sqh7n033ut3e" path="res://Scripts/Objects/Enemy/Base/enemy_movement.gd" id="11_6ucen"]
+[ext_resource type="Script" uid="uid://d0apewip2v3gh" path="res://Scripts/Objects/Enemy/Base/enemy_animation.gd" id="12_h0663"]
+[ext_resource type="PackedScene" uid="uid://cqgmqt7i3jrje" path="res://Scenes/Components/effect_component.tscn" id="14_512dv"]
+[ext_resource type="Script" uid="uid://b4pymh0mvir6d" path="res://Scripts/Objects/Enemy/Base/enemy_health_ui.gd" id="16_76bw6"]
+[ext_resource type="Theme" uid="uid://8lj8iqjncp2t" path="res://Resources/main_theme.tres" id="16_ewc22"]
+[ext_resource type="PackedScene" uid="uid://bwycmgokd5ta8" path="res://Scenes/UI/health_bar.tscn" id="19_xxkv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sqod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e66tk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_512dv"]
+
+[sub_resource type="Resource" id="Resource_512dv"]
+script = ExtResource("6_7sqod")
+metadata/_custom_type_script = "uid://cgupj3k343e76"
+
+[sub_resource type="Resource" id="Resource_24neu"]
+script = ExtResource("5_xxkv6")
+start_health = SubResource("Resource_512dv")
+health_effects = Array[ExtResource("4_v5mj1")]([])
+metadata/_custom_type_script = "uid://wk8i5c2lff8a"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6cxka"]
+radius = 5.33
+height = 10.66
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxkv6"]
+font_size = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5mj1"]
+
+[node name="Enemy" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_7sqod")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7sqod")
+
+[node name="Effect" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_512dv")
+
+[node name="HealthComponent" parent="." instance=ExtResource("9_6cxka")]
+health = SubResource("Resource_24neu")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component", "effect_component") instance=ExtResource("10_6ucen")]
+collision_mask = 0
+health_component = NodePath("../HealthComponent")
+effect_component = NodePath("../EffectComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CapsuleShape2D_6cxka")
+debug_color = Color(0, 0.6, 0.701961, 0.0431373)
+
+[node name="EnemyMovement" type="Node2D" parent="."]
+script = ExtResource("11_6ucen")
+speed = 50.0
+
+[node name="EnemyAnimation" type="Node" parent="."]
+script = ExtResource("12_h0663")
+
+[node name="EffectComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("14_512dv")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HealthUI" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -29.0
+offset_top = -40.0
+offset_right = 29.0
+offset_bottom = -10.0
+pivot_offset = Vector2(29, 15)
+mouse_filter = 1
+color = Color(0, 0, 0, 0)
+script = ExtResource("16_76bw6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HealthUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HealthUI/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("16_ewc22")
+text = "100 / 100"
+label_settings = SubResource("LabelSettings_xxkv6")
+
+[node name="HealthBar" parent="HealthUI/VBoxContainer" instance=ExtResource("19_xxkv6")]
+custom_minimum_size = Vector2(38, 3)
+layout_mode = 2
+mouse_filter = 1
+damage_visual_time = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HealthUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="StatusEffects" type="HBoxContainer" parent="HealthUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="OtherEffects" type="HBoxContainer" parent="HealthUI/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="MouseArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("RectangleShape2D_v5mj1")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[connection signal="initialized" from="." to="HealthUI" method="_on_enemy_initialized"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="took_damage" from="HealthComponent" to="HealthUI" method="_on_health_component_took_damage"]
+[connection signal="reached_end" from="EnemyMovement" to="." method="_on_enemy_movement_reached_end"]
+[connection signal="status_updated" from="EffectComponent" to="HealthUI" method="_on_effect_component_status_updated"]
+[connection signal="mouse_entered" from="MouseArea" to="HealthUI" method="_on_mouse_area_mouse_entered"]
+[connection signal="mouse_exited" from="MouseArea" to="HealthUI" method="_on_mouse_area_mouse_exited"]

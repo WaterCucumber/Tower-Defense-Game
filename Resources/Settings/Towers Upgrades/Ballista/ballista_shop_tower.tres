@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ShopTowerSettings" load_steps=10 format=3 uid="uid://c64cm4l34ejt2"]
+
+[ext_resource type="Script" uid="uid://dep10uut4gn6v" path="res://Scripts/Objects/Turret/Settings/ranged_tower_settings.gd" id="1_nm2bv"]
+[ext_resource type="Script" uid="uid://by7w26q306o6w" path="res://Scripts/Objects/Turret/Settings/shop_tower_settings.gd" id="1_xxmrg"]
+[ext_resource type="Resource" uid="uid://bqw1dr670ymi" path="res://Resources/Settings/Bullets/ballista_bullet.tres" id="2_x8ull"]
+[ext_resource type="Texture2D" uid="uid://3sca0j5of2hh" path="res://Assets/Sprites/Turrets/Ranged/Ballista/ballista_0.png" id="3_v6g4u"]
+[ext_resource type="Script" uid="uid://cy8wod4rmhnd8" path="res://Scripts/Resources/Turret Upgrade Strategy/tower_upgrade_data.gd" id="6_nvfg1"]
+[ext_resource type="Script" uid="uid://dyfakkhbgexe2" path="res://Scripts/Resources/Count/count.gd" id="9_vfmgi"]
+
+[sub_resource type="Resource" id="Resource_xxmrg"]
+script = ExtResource("9_vfmgi")
+count = 1.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_55qwm"]
+script = ExtResource("9_vfmgi")
+count = 30.0
+metadata/_custom_type_script = "uid://dyfakkhbgexe2"
+
+[sub_resource type="Resource" id="Resource_k0w3x"]
+script = ExtResource("1_nm2bv")
+bullet_settings = ExtResource("2_x8ull")
+use_custom_tower_scene = false
+radius = SubResource("Resource_55qwm")
+cooldown = SubResource("Resource_xxmrg")
+offset_type = 3
+debug_target_pos = false
+weapon_size = Vector2(1, 1)
+metadata/_custom_type_script = "uid://dep10uut4gn6v"
+
+[resource]
+script = ExtResource("1_xxmrg")
+tower_texture = ExtResource("3_v6g4u")
+tower_name = "Ballista"
+tower_cost = 3.0
+tower_sell_pct = 0.95
+place_tiles = Array[int]([2])
+tower_settings = SubResource("Resource_k0w3x")
+tower_upgrades = Array[ExtResource("6_nvfg1")]([])
+metadata/_custom_type_script = "uid://by7w26q306o6w"

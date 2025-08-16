@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://coiamf4ipskja"]
+
+[ext_resource type="PackedScene" uid="uid://dtdvoeqg2emos" path="res://Scenes/Objects/turret.tscn" id="1_qndqq"]
+[ext_resource type="Script" uid="uid://ctjerfxmdl37f" path="res://Scripts/Objects/Turret/melee_turret.gd" id="2_g8usr"]
+[ext_resource type="Texture2D" uid="uid://c2s4oiinj1a25" path="res://Assets/Sprites/Turrets/Melee/Knight/Sword.png" id="3_dsdoh"]
+[ext_resource type="PackedScene" uid="uid://pudj2u1if1sp" path="res://Scenes/Components/hitbox_component.tscn" id="4_3igy4"]
+[ext_resource type="PackedScene" uid="uid://cl4bimwa1v6wm" path="res://Scenes/Components/attack_component.tscn" id="5_3igy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2dll"]
+size = Vector2(2, 10)
+
+[node name="Melee Turret" node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("1_qndqq")]
+script = ExtResource("2_g8usr")
+collision_shape_2d = NodePath("WeaponRotationgPos/Attack/Sword/HitboxComponent/CollisionShape2D")
+
+[node name="WeaponRotationgPos" type="Node2D" parent="." index="5"]
+
+[node name="Attack" type="Node2D" parent="WeaponRotationgPos" index="0"]
+position = Vector2(0, -6)
+
+[node name="Sword" type="Sprite2D" parent="WeaponRotationgPos/Attack" index="0"]
+position = Vector2(0, -13.25)
+scale = Vector2(1, 1.7)
+texture = ExtResource("3_dsdoh")
+
+[node name="HitboxComponent" parent="WeaponRotationgPos/Attack/Sword" index="0" node_paths=PackedStringArray("attack_component") instance=ExtResource("4_3igy4")]
+attack_component = NodePath("../../../../AttackComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponRotationgPos/Attack/Sword/HitboxComponent" index="0"]
+position = Vector2(5.96046e-08, -2.5)
+shape = SubResource("RectangleShape2D_u2dll")
+disabled = true
+
+[node name="AttackComponent" parent="." index="6" instance=ExtResource("5_3igy4")]
